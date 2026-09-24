@@ -1,0 +1,16 @@
+# Secrets — never commit
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+
+# OS
+.DS_Store
+
+# Written by examples/04_design_your_own.py — a demo of saving a set, not a shipped set.
+scripts/decisions/repeat_test_authorisation.json

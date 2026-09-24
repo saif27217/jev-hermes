@@ -1,0 +1,19 @@
+{
+  "support": {
+    "type": "choice",
+    "instructions": "Compare `assistant_answer` against `sources`. Which one describes it?",
+    "criteria": {
+      "supported": "The answer addresses `question`, and every fact, number, and policy in it is stated in `sources`.",
+      "unsupported": "The answer states at least one fact, number, or policy that `sources` does not contain or that contradicts them, or it answers a different question than `question`.",
+      "declined": "The answer says `sources` do not cover the question and asserts no facts of its own."
+    }
+  },
+  "grounded_in_own_words": {
+    "type": "noul",
+    "instructions": "Is `assistant_answer` free of claims that come only from outside `sources`?",
+    "criteria": {
+      "true": { "what": "Every assertion traces to `sources`", "examples": ["Restates a value present in the excerpts"] },
+      "false": { "what": "At least one assertion is absent from `sources`", "not_for": "An answer that declines and asserts nothing" }
+    }
+  }
+}

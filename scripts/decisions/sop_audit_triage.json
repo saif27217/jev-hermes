@@ -1,0 +1,28 @@
+{
+  "is_sop_audit": {
+    "type": "noul",
+    "instructions": "Does `request` ask for a standard operating procedure or controlled document to be checked, corrected, or rewritten?",
+    "criteria": {
+      "true": { "what": "The request names a SOP/controlled doc and asks to audit, verify, correct, or migrate it", "examples": ["Audit VDC/BIO/128 against the osmometer manual"] },
+      "false": { "what": "The request is about a result, patient, reagent, or general question", "not_for": "A question about what a SOP says, without asking for review" }
+    }
+  },
+  "audit_scope": {
+    "type": "choice",
+    "instructions": "What scope does the audit cover?",
+    "criteria": {
+      "single": "One SOP against one reference",
+      "bulk": "A family or database-wide sweep of many SOPs",
+      "cross_collection": "One SOP cross-checked against the lab-test catalog entry",
+      "kit_insert": "One SOP against a kit insert the user supplied"
+    }
+  },
+  "has_reference": {
+    "type": "noul",
+    "instructions": "Does `request` supply or name the authoritative reference (kit insert, manual, catalog entry) the SOP must be checked against?"
+  },
+  "is_platform_migration": {
+    "type": "noul",
+    "instructions": "Is the SOP being moved to a different analyzer or platform, rather than checked against its current one?"
+  }
+}

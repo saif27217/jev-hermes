@@ -1,0 +1,65 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install test deps
+        run: pip install -r requirements-dev.txt
+
+      - name: Verify the mirror is in sync with the skill
+        run: sha256sum -c MANIFEST.sha256
+
+      - name: Byte-compile the client
+        run: python -m compileall -q scripts
+
+      - name: Offline test suite (never touches the network)
+        run: pytest tests/test_client.py -q
+
+      - name: Live smoke tests (only when the key secret is present)
+        if: ${{ github.event_name != 'pull_request' && env.OPENROUTER_API_KEY != '' }}
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          JEV_LIVE: "1"
+        run: pytest tests/test_live_smoke.py -q
+
+  decision-sets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Every decision set is valid JSON with the expected shape
+        run: |
+          python - <<'EOF'
+          import json, pathlib, sys
+          ok = True
+          for p in sorted(pathlib.Path("scripts/decisions").glob("*.json")):
+              data = json.loads(p.read_text())
+              if not data:
+                  print(f"EMPTY: {p}"); ok = False
+              for name, q in data.items():
+                  if q.get("type") not in {"choice", "noul", "score"}:
+                      print(f"BAD TYPE: {p}:{name} -> {q.get('type')}"); ok = False
+                  if not q.get("instructions"):
+                      print(f"NO INSTRUCTIONS: {p}:{name}"); ok = False
+                  if q.get("type") == "choice" and len(q.get("criteria", {})) < 2:
+                      print(f"TOO FEW CRITERIA: {p}:{name}"); ok = False
+          sys.exit(0 if ok else 1)
+          EOF

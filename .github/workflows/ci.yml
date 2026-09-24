@@ -32,11 +32,14 @@ jobs:
         run: pytest tests/test_client.py -q
 
       - name: Live smoke tests (only when the key secret is present)
-        if: ${{ github.event_name != 'pull_request' && env.OPENROUTER_API_KEY != '' }}
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          JEV_LIVE: "1"
-        run: pytest tests/test_live_smoke.py -q
+        run: |
+          if [ -n "$OPENROUTER_API_KEY" ]; then
+            JEV_LIVE=1 pytest tests/test_live_smoke.py -q
+          else
+            echo "OPENROUTER_API_KEY secret not set — skipping live tests (offline suite already passed)"
+          fi
 
   decision-sets:
     runs-on: ubuntu-latest

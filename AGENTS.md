@@ -302,6 +302,21 @@ response raises. Tests must push both answers — this caused five initial test 
 `--score` without a `--criteria` is now a hard error rather than an empty `criteria` list that
 the API rejects.
 
+### 8.12 `secrets` is not available in a step's `if:` — use a shell guard
+
+The live-smoke CI step cannot use `if: ${{ secrets.OPENROUTER_API_KEY != '' }}`; the `secrets`
+context is not exposed to `if` expressions, so the condition silently evaluates false and the
+step is skipped forever — a green build that never tested anything. The working shape is a step
+`env:` plus a shell guard:
+
+```yaml
+- env:
+    OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+  run: if [ -n "$OPENROUTER_API_KEY" ]; then JEV_LIVE=1 pytest tests/test_live_smoke.py -q; fi
+```
+
+Add the secret under **Settings → Secrets → Actions** to actually exercise it.
+
 ---
 
 ## 9. Extension recipes

@@ -7,6 +7,11 @@ on every turn.
 This folder is the working prototype and its measurements. It is **reference
 material**, not part of the mirrored client (`sync.sh` does not touch it).
 
+> **Read [`LIMITATIONS.md`](LIMITATIONS.md) first.** Prompt caching (37× discount
+> on a stable prefix) collapses the headline token saving to ~30% on the bill,
+> and a domain flip can make the router 3–8× *more* expensive. The verdict is
+> **do not build the hybrid**.
+
 ---
 
 ## The question it answers
@@ -95,7 +100,10 @@ skills), so real recall is likely nearer 80%.
 | **Hybrid: stage 1 + domain shortlist, model picks** | **3,184** | **81% less** |
 
 Over a 5-turn conversation: **74,165 → 15,920 tokens** (hybrid).
-Cost: ~**$0.0001 per route**.
+
+> These are **raw tokens, not billed cost.** With prompt caching on, the stable
+> roster bills at ~$0.000112/turn, so the true saving is ~30%, not 81%. See
+> [`LIMITATIONS.md`](LIMITATIONS.md) §1.
 
 ---
 
@@ -109,9 +117,12 @@ Cost: ~**$0.0001 per route**.
 3. **Jev-classifying all skills improves the taxonomy but does not by itself
    raise stage-2 recall**, because the losses are downstream of grouping
    (prefilter window, stage-1 domain on fragments, near-duplicates).
-4. **Recommended design:** Jev-classified index → stage 1 domain → hand that
-   domain's shortlist (~1,513 tokens avg) to the model. **81% token reduction,
-   accuracy preserved.** Drop Jev stage 2.
+4. **Recommended design (caching-aware):** do **not** build the hybrid. The
+   roster is cached at ~37× off, so replacing it saves ~30% of the bill at best
+   and costs more on domain flips — while adding latency and a silent-miss
+   failure mode. If roster savings are wanted, **shorten the roster content
+   itself** (prune dead skills, trim descriptions). Full analysis:
+   [`LIMITATIONS.md`](LIMITATIONS.md).
 
 Known limit: context-dependent fragments ("yes add it to the plan", a UI
 request with no project named) cannot be routed from the message alone — stage 1
@@ -129,6 +140,8 @@ must receive the recent turns as `state`, not just the current message.
 | `stage2_router.py` | Domain map + stage-2 Jev choice + `--domains` listing |
 | `measure_stage2.py` | Quality + token measurement |
 | `diagnose.py` | Attribute each miss: label error vs prefilter vs stage 1 |
+| `cache_cost_probe.py` | Measure billed cost: stable prefix vs varying prefix (live) |
+| `LIMITATIONS.md` | Negative results and measured limits — read before building |
 | `test_skill_router.py` | Curated 20-request set (stage 1) |
 | `test_skill_router_real.py` | 17 real requests recovered from session history |
 | `skill_domains.json` | Jev's 318 skill→domain labels |

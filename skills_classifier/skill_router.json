@@ -1,0 +1,44 @@
+{
+  "domain": {
+    "type": "choice",
+    "instructions": "Which skill domain is the best fit for `request`?",
+    "criteria": {
+      "lab_clinical": "Lab and clinical work: SOPs, kit inserts (IFU), instrument manuals, analyzer QC/calibration, clinical interpretation of results, lab-test catalogs, reagent inventory. Example skills: sop-auditor, clinical-lab-interpretation, access-*/beckman-* kit inserts, osmomat, imark-reader, remisol-advance.",
+      "research": "Finding and reading PUBLIC or EXTERNAL sources: literature/paper search (PubMed, arXiv), web search, news digests, trending repos/trend scans, literature review. Example skills: research/*, paper-lookup, pubmed-daily-digest, exa-search, tavily, deep-rag. Includes reading public data ABOUT a platform (e.g. trending GitHub repos by stars).",
+      "rag_data": "Querying an INTERNAL knowledge base (Qdrant/RAG collections) or analyzing datasets/tabular data. Example skills: soffos-rag, qdrant-rag, rag-collection-integration, pandas, polars, analysis-catalog, exploratory-data-analysis.",
+      "content_media": "Producing creative or media output: social posts, slides, images, infographics, carousels, video, audio/TTS, transcription. Example skills: content/*, infographic-carousel, motion-graphics, generate-image, deepgram-tts, audio-transcriber, linkedin-post-creator.",
+      "market_finance": "Indian stocks, indices, mutual funds, crypto, screeners, P&L reports, personal finance decisions. Example skills: indian-markets, best-stocks, index-funds, ccxt-crypto-trading, tapetide.",
+      "devops_infra": "Servers, VPS, SSH, deployments, containers, server diagnostics, code changes in a software project, and TROUBLESHOOTING a failing job or broken command. Example skills: devops/*, server-diagnostics, ssh-*, hermes-safe-update, hermes-graphics recovery, cron-job-troubleshooting.",
+      "hermes_dev": "Working ON Hermes itself or on skills: the plugin marketplace, agent config, the model catalog, agent internals/TUI, and authoring/editing skills from documents. Example skills: hermes-agent, hermes-model-catalog-*, skill-extension, book-to-skill, autoskill, mcp-integration.",
+      "integration_mcp": "Acting through the USER'S OWN connected third-party account via MCP/Composio: uploading to their Drive, editing their Docs/Sheets, sending Gmail, posting to their Slack, managing their GitHub repos, Notion, Stripe, Hostinger. Example skills: mcp/*, integration/*, composio-mcp, google-workspace. NOT for merely reading public data about a platform.",
+      "automation_cron": "BUILDING or SCHEDULING new recurring pipelines, webhooks, monitors, or agents. Example skills: automation/*, cron-*, webhook-subscriptions, daily-*-pipeline.",
+      "bio_science": "Bioinformatics and scientific-computing toolkits: sequence/omics analysis, cheminformatics, molecular modelling, statistics. Example skills: biopython, scanpy, rdkit, pysam, cobrapy, scikit-learn, pymc.",
+      "office_files": "Creating or editing a LOCAL office file: .docx, .pptx, .xlsx, .pdf on disk. Example skills: docx, pptx, xlsx, pdf, pptx-posters.",
+      "none": "Plain conversation, reasoning, opinion, or a question answerable from context — with NO file write, NO code change, and NO tool call needed."
+    }
+  },
+  "needs_authenticated_tool": {
+    "type": "noul",
+    "instructions": "Does `request` require an authenticated external account or API (Drive, Gmail, Slack, GitHub, Stripe, a paid API)?",
+    "criteria": {
+      "true": { "what": "The task cannot be done without logging into or calling an external platform", "examples": ["Upload to Drive", "Post to Slack"] },
+      "false": { "what": "Local files, local computation, or public unauthenticated sources only", "not_for": "Reading a public web page" }
+    }
+  },
+  "is_multi_domain": {
+    "type": "noul",
+    "instructions": "Does `request` span two or more of the listed domains?",
+    "criteria": {
+      "true": { "what": "The request chains distinct domains", "examples": ["Search PubMed then write a slide deck from it"] },
+      "false": { "what": "One domain covers the whole request", "not_for": "Several files of the same kind" }
+    }
+  },
+  "is_recurring": {
+    "type": "noul",
+    "instructions": "Is `request` asking for something to run on a schedule or repeat automatically?",
+    "criteria": {
+      "true": { "what": "Names a cadence or asks for a recurring/automated delivery", "examples": ["Every morning at 8", "set up a daily digest"] },
+      "false": { "what": "A one-off task now" }
+    }
+  }
+}

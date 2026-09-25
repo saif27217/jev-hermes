@@ -1,0 +1,2234 @@
+[
+ {
+  "skill": "access-br-monitor-dxi",
+  "description": "CA 15-3 (Access BR Monitor) kit insert for DxI/Access. argument-hint: \"<query-or-section>",
+  "category": "",
+  "path": "/home/sak/.hermes/skills/access-br-monitor-dxi/SKILL.md",
+  "skill_md_chars": 12999,
+  "desc_chars": 89
+ },
+ {
+  "skill": "access-ckmb-dxi",
+  "description": "Beckman Access CK-MB kit insert (WB A34099B) for DxI/Access. argument-hint: \"<query-or-section>",
+  "category": "",
+  "path": "/home/sak/.hermes/skills/access-ckmb-dxi/SKILL.md",
+  "skill_md_chars": 11372,
+  "desc_chars": 95
+ },
+ {
+  "skill": "access-free-psa-dxi",
+  "description": "Knowledge base from Beckman Coulter Access Hybritech free PSA kit insert (WB A37447A) for the Access/DXI immunoassay systems. Use when interpreting free PSA, percent free PSA results, calibration choices (Hybritech vs WHO), specimen handling rules, analytical performance specs, or clinical decision cutoffs for prostate cancer screening.",
+  "category": "",
+  "path": "/home/sak/.hermes/skills/access-free-psa-dxi/SKILL.md",
+  "skill_md_chars": 9407,
+  "desc_chars": 338
+ },
+ {
+  "skill": "access-shbg-dxi",
+  "description": "> Beckman Coulter Access SHBG kit insert (A48617, IFU C64672 B, \u00a9 2023) for Access / UniCel DxI analyzers. Sequential two-step sandwich paramagnetic-particle chemiluminescent immunoassay (CLIA) for Sex Hormone-Binding Globulin in serum and heparin plasma. Covers intended use, SHBG physiology & androgen-status indices (FAI, free/bioavailable testosterone), reagent/calibrator handling, specimen rules, interferences, cross-reactivity, and analytical performance. Use for lab SOP authoring, assay validation, interference checks, and clinical interpretation context (PCOS, hirsutism, hypogonadism, thyroid/liver disease). argument-hint: \"<query-or-section>",
+  "category": "",
+  "path": "/home/sak/.hermes/skills/access-shbg-dxi/SKILL.md",
+  "skill_md_chars": 14054,
+  "desc_chars": 656
+ },
+ {
+  "skill": "access-testosterone-dxi",
+  "description": "> Beckman Coulter Access Testosterone kit insert (WB A33261B, \u00a9 2006) for Access / SYNCHRON LXi / UniCel DxI analyzers. Paramagnetic-particle chemiluminescent immunoassay (CLIA) for total testosterone in serum and heparin plasma. Covers intended use, reagent/calibrator handling, specimen rules (EDTA NOT recommended), interferences, cross-reactivity, and analytical performance. Use for lab SOP authoring, assay validation, interference checks, and clinical interpretation context (hypogonadism, PCOS, adrenal/testicular/ovarian tumors, CAH). argument-hint: \"<query-or-section>",
+  "category": "",
+  "path": "/home/sak/.hermes/skills/access-testosterone-dxi/SKILL.md",
+  "skill_md_chars": 11203,
+  "desc_chars": 578
+ },
+ {
+  "skill": "ai-trends-brief-cron",
+  "description": "",
+  "category": "",
+  "path": "/home/sak/.hermes/skills/ai-trends-brief-cron/SKILL.md",
+  "skill_md_chars": 3531,
+  "desc_chars": 0
+ },
+ {
+  "skill": "apo-b-osr6143",
+  "description": "Knowledge base from the Beckman Coulter OSR6143 Apo B (Apolipoprotein B) kit insert, Nov 2024. Use when performing or auditing quantitative immunoturbidimetric Apo B measurement on AU/DxC AU analyzers, reviewing analyte-specific QC/procedure rules, or checking interferences, reference intervals, and performance specs for this reagent.",
+  "category": "",
+  "path": "/home/sak/.hermes/skills/apo-b-osr6143/SKILL.md",
+  "skill_md_chars": 11035,
+  "desc_chars": 336
+ },
+ {
+  "skill": "audio-to-doc",
+  "description": "Transcribe audio to Google Doc via faster-whisper.",
+  "category": "",
+  "path": "/home/sak/.hermes/skills/audio-to-doc/SKILL.md",
+  "skill_md_chars": 4613,
+  "desc_chars": 50
+ },
+ {
+  "skill": "ai-trends-pipeline",
+  "description": ">- Daily AI/Hermes/LLM/autonomous agent trend scraper + Composio pipeline. Two chained cron jobs: scraper (free APIs, no_agent=True) \u2192 composio (Doc + Sheet + Email, agent-driven via native mcp__composio__* tools). The scraper is zero-token; the composio job is agent-driven because it needs Hermes's OAuth-authenticated Composio client, which no_agent scripts cannot reach.",
+  "category": "automation",
+  "path": "/home/sak/.hermes/skills/automation/ai-trends-pipeline/SKILL.md",
+  "skill_md_chars": 13845,
+  "desc_chars": 374
+ },
+ {
+  "skill": "beckman-au-reagent-guides",
+  "description": "Build skills from Beckman AU reagent guides, split by class.\" argument-hint: \"<path-to-pdf> [skill-name-prefix]",
+  "category": "automation",
+  "path": "/home/sak/.hermes/skills/automation/beckman-au-reagent-guides/SKILL.md",
+  "skill_md_chars": 8399,
+  "desc_chars": 111
+ },
+ {
+  "skill": "brain-scan",
+  "description": "Audit n8n/LangGraph/Hermes workflows against Cognitive Core Skills taxonomy to find reasoning gaps, verification holes, and memory leaks.",
+  "category": "automation",
+  "path": "/home/sak/.hermes/skills/automation/brain-scan/SKILL.md",
+  "skill_md_chars": 9303,
+  "desc_chars": 137
+ },
+ {
+  "skill": "content-research-workflow",
+  "description": "On-demand webhook research pipeline \u2014 POST a topic, get back a Google Doc with a Gemini-generated SEO article powered by Tavily real-time research. Covers triggering, output delivery, and quality optimization.",
+  "category": "automation",
+  "path": "/home/sak/.hermes/skills/automation/content-research-workflow/SKILL.md",
+  "skill_md_chars": 12356,
+  "desc_chars": 209
+ },
+ {
+  "skill": "cron-syllabus-builder",
+  "description": "Turn syllabi into daily cron deliveries.",
+  "category": "automation",
+  "path": "/home/sak/.hermes/skills/automation/cron-syllabus-builder/SKILL.md",
+  "skill_md_chars": 3787,
+  "desc_chars": 40
+ },
+ {
+  "skill": "daily-fun-api",
+  "description": "> Zero-token daily fun content cron pipeline for Hermes. Covers the 9 curated no-auth APIs, the required pure-bash/urllib script shape, cron setup, and the deprecation bugfixes discovered in production for country, meal, and foodfact outputs.",
+  "category": "automation",
+  "path": "/home/sak/.hermes/skills/automation/daily-fun-api/SKILL.md",
+  "skill_md_chars": 4293,
+  "desc_chars": 242
+ },
+ {
+  "skill": "daily-lesson-pipeline",
+  "description": "Cron lesson delivery with syllabus JSON and STE formatting.",
+  "category": "automation",
+  "path": "/home/sak/.hermes/skills/automation/daily-lesson-pipeline/SKILL.md",
+  "skill_md_chars": 3909,
+  "desc_chars": 59
+ },
+ {
+  "skill": "daily-multi-community-brief",
+  "description": "Daily cron pipeline that scans 20 subreddits via Tavily, compiles top stories by signal score, creates a Google Doc, and emails the link. Reproducible from cron.",
+  "category": "automation",
+  "path": "/home/sak/.hermes/skills/automation/daily-multi-community-brief/SKILL.md",
+  "skill_md_chars": 2616,
+  "desc_chars": 161
+ },
+ {
+  "skill": "daily-research-pipeline",
+  "description": ">- Canonical recipe for a daily cron-driven research pipeline that pulls fresh data from free public APIs, deduplicates across days, and archives results (Doc + Sheet + Email via Composio JSON-RPC in a no_agent cron). Applicable to AI trends, literature, market scans, or any recurring external scan.",
+  "category": "automation",
+  "path": "/home/sak/.hermes/skills/automation/daily-research-pipeline/SKILL.md",
+  "skill_md_chars": 17639,
+  "desc_chars": 300
+ },
+ {
+  "skill": "deterministic-source-extraction",
+  "description": "Use when extracting source docs into accurate skills.",
+  "category": "automation",
+  "path": "/home/sak/.hermes/skills/automation/deterministic-source-extraction/SKILL.md",
+  "skill_md_chars": 14776,
+  "desc_chars": 53
+ },
+ {
+  "skill": "drive-image-catalog",
+  "description": "Systematically audit a collection of images in Google Drive via vision_analyze, classify by visual style, and build a structured catalog document in Google Docs.",
+  "category": "automation",
+  "path": "/home/sak/.hermes/skills/automation/drive-image-catalog/SKILL.md",
+  "skill_md_chars": 4279,
+  "desc_chars": 161
+ },
+ {
+  "skill": "drive-images-to-docs",
+  "description": ">- End-to-end pipeline: extract Reddit post + linked Drive folder \u2192 audit images via vision analysis \u2192 build style mapping \u2192 populate public Google Doc catalog. Proven on the Krea 2 wildcards 143-style catalog.",
+  "category": "automation",
+  "path": "/home/sak/.hermes/skills/automation/drive-images-to-docs/SKILL.md",
+  "skill_md_chars": 11647,
+  "desc_chars": 210
+ },
+ {
+  "skill": "drive-media-audit",
+  "description": "> Batch-audit large publicly shared Google Drive image libraries by combining Composio Drive tooling with vision analysis, then embed verified matches into public Google Docs. Use when classifying/style-mapping hundreds of generic-named images in Drive, or building a visual catalog doc with representative images sourced from Drive assets rather than generation.",
+  "category": "automation",
+  "path": "/home/sak/.hermes/skills/automation/drive-media-audit/SKILL.md",
+  "skill_md_chars": 7487,
+  "desc_chars": 363
+ },
+ {
+  "skill": "hermes-model-catalog-prune",
+  "description": "Use when controlling which models the Hermes /model picker shows \u2014 pruning, allow-listing, or restricting provider model lists. Covers picker source locations, the two custom OpenRouter providers, and post-update drift recovery.",
+  "category": "automation",
+  "path": "/home/sak/.hermes/skills/automation/hermes-model-catalog-prune/SKILL.md",
+  "skill_md_chars": 7470,
+  "desc_chars": 228
+ },
+ {
+  "skill": "n8n-mcp",
+  "description": "Full reference for managing n8n workflows via the hosted MCP bridge. Covers workflow CRUD, execution monitoring, build rules, known pitfalls, and Hermes Agent setup.",
+  "category": "automation",
+  "path": "/home/sak/.hermes/skills/automation/n8n-mcp/SKILL.md",
+  "skill_md_chars": 32482,
+  "desc_chars": 165
+ },
+ {
+  "skill": "nsfw-subreddit-concise-daily-scan",
+  "description": ">- Lightweight daily scan: fetches the single top post from each of 38 curated NSFW subreddits. No ranking \u2014 one post per sub, flat list in a Google Doc. About 38 posts total.",
+  "category": "automation",
+  "path": "/home/sak/.hermes/skills/automation/nsfw-subreddit-concise-daily-scan/SKILL.md",
+  "skill_md_chars": 12769,
+  "desc_chars": 175
+ },
+ {
+  "skill": "nsfw-subreddit-daily-scan",
+  "description": ">- Daily top-posts scan across 38 curated NSFW subreddits grouped by type (General NSFW, Celebrity, GIFs, AI, Anime/Hentai, Misc). Fetches top posts, ranks by signal score, writes a Google Doc, and emails the link.",
+  "category": "automation",
+  "path": "/home/sak/.hermes/skills/automation/nsfw-subreddit-daily-scan/SKILL.md",
+  "skill_md_chars": 6183,
+  "desc_chars": 214
+ },
+ {
+  "skill": "olx-deal-hunter",
+  "description": "> Class-level umbrella for OLX India deal scanners. Covers the end-to-end pipeline (Firecrawl via Composio MCP \u2192 Google Doc + Gmail email), MSRP-based legitimacy scoring, category classifier pitfalls, and cron runner pattern shared between Mac and tech scanners. Use for building new OLX scanners, fixing scoring/classifier issues, or debugging cron delivery problems.",
+  "category": "automation",
+  "path": "/home/sak/.hermes/skills/automation/olx-deal-hunter/SKILL.md",
+  "skill_md_chars": 4810,
+  "desc_chars": 368
+ },
+ {
+  "skill": "one-cli-setup",
+  "description": "Install, authenticate, and use the One CLI to interact with 400+ third-party platforms (Gmail, Slack, Notion, Stripe, GitHub, HubSpot, etc.) via their APIs.",
+  "category": "automation",
+  "path": "/home/sak/.hermes/skills/automation/one-cli-setup/SKILL.md",
+  "skill_md_chars": 4088,
+  "desc_chars": 156
+ },
+ {
+  "skill": "pdf-to-drive-pipeline",
+  "description": "PDF\u2192Drive: extract, organize, upload via Composio.",
+  "category": "automation",
+  "path": "/home/sak/.hermes/skills/automation/pdf-to-drive-pipeline/SKILL.md",
+  "skill_md_chars": 8526,
+  "desc_chars": 50
+ },
+ {
+  "skill": "software-installation-paths",
+  "description": "> Common installation path traps and correct procedures for Hermes Agent. Covers skills CLI vs manual install, provider config quirks, and the pattern of \"tool X installs to Y but Hermes expects Z.\" Use when installing external tools, skills, or plugins and the result is not where Hermes finds it.",
+  "category": "automation",
+  "path": "/home/sak/.hermes/skills/automation/software-installation-paths/SKILL.md",
+  "skill_md_chars": 2380,
+  "desc_chars": 298
+ },
+ {
+  "skill": "sop-auditor",
+  "description": "Audit SOPs and controlled documents retrieved from a Qdrant RAG collection for discrepancies, contradictions, missing steps, and compliance gaps. Use when asked to audit, review, or reconcile SOPs / work instructions / procedures against standards (ISO 15189, NABL, ISO 13485, CLIA, etc.). Covers the full workflow: broad retrieval (with a full payload dump to defeat semantic top-k blindness), discrepancy analysis, and delivery as a Google Doc via Composio MCP.",
+  "category": "automation",
+  "path": "/home/sak/.hermes/skills/automation/sop-auditor/SKILL.md",
+  "skill_md_chars": 48246,
+  "desc_chars": 463
+ },
+ {
+  "skill": "sop-auditor-bulk",
+  "description": "Database-wide / family-wide SOP deficiency scanner for a Qdrant RAG collection. Dumps the ENTIRE collection (full payload, not top-k), classifies every SOP against the recurring-gap checklist (Accuracy/Specificity validation, TAT, periodic review, CLSI/EP method validation, calibration, critical values, LOQ, MSP29), and delivers a consolidated audit as a Google Doc. Use when asked 'does any SOP carry validation data?', 'what common deficiencies exist across the series?', or to audit a whole analyzer family at once. Companion to sop-auditor (single-doc).",
+  "category": "automation",
+  "path": "/home/sak/.hermes/skills/automation/sop-auditor-bulk/SKILL.md",
+  "skill_md_chars": 6802,
+  "desc_chars": 559
+ },
+ {
+  "skill": "sop-cross-collection-audit",
+  "description": "Cross-check a SOP with its lab-tests-galore catalog entry.",
+  "category": "automation",
+  "path": "/home/sak/.hermes/skills/automation/sop-cross-collection-audit/SKILL.md",
+  "skill_md_chars": 5994,
+  "desc_chars": 58
+ },
+ {
+  "skill": "sop-kit-insert-audit",
+  "description": "Audit a lab SOP against a kit insert the user supplies.",
+  "category": "automation",
+  "path": "/home/sak/.hermes/skills/automation/sop-kit-insert-audit/SKILL.md",
+  "skill_md_chars": 7726,
+  "desc_chars": 55
+ },
+ {
+  "skill": "sop-platform-migration",
+  "description": "Rewrite a SOP for a different analyzer platform.",
+  "category": "automation",
+  "path": "/home/sak/.hermes/skills/automation/sop-platform-migration/SKILL.md",
+  "skill_md_chars": 19872,
+  "desc_chars": 48
+ },
+ {
+  "skill": "9router-setup",
+  "description": "Use when Hermes session/model/provider changes via 9router or similar router. Verify active model/provider, update self-identification, and prevent stale-model confusion.",
+  "category": "autonomous-ai-agents",
+  "path": "/home/sak/.hermes/skills/autonomous-ai-agents/9router-setup/SKILL.md",
+  "skill_md_chars": 12044,
+  "desc_chars": 170
+ },
+ {
+  "skill": "aider-setup",
+  "description": "Set up and configure Aider (AI pair programming CLI) with local Ollama models, especially small models like Qwen3.5-9B. Covers model metadata, model settings, edit format selection, context window fixes, and Hermes integration patterns.",
+  "category": "autonomous-ai-agents",
+  "path": "/home/sak/.hermes/skills/autonomous-ai-agents/aider-setup/SKILL.md",
+  "skill_md_chars": 4263,
+  "desc_chars": 236
+ },
+ {
+  "skill": "claude-code",
+  "description": "Delegate coding to an external CLI coding agent. Covers Claude Code, OpenAI Codex, OpenCode, and Command Code (cmdc) in one skill \u2014 selection, orchestration, PR review, parallel lanes, and CI patterns.",
+  "category": "autonomous-ai-agents",
+  "path": "/home/sak/.hermes/skills/autonomous-ai-agents/claude-code/SKILL.md",
+  "skill_md_chars": 49657,
+  "desc_chars": 201
+ },
+ {
+  "skill": "computer-use",
+  "description": "Drive the desktop background-first; escalate on signal.",
+  "category": "autonomous-ai-agents",
+  "path": "/home/sak/.hermes/skills/autonomous-ai-agents/computer-use/SKILL.md",
+  "skill_md_chars": 17954,
+  "desc_chars": 55
+ },
+ {
+  "skill": "custom-llm-providers",
+  "description": "Add custom OpenAI-compatible LLM providers (Ollama, MLX, local models, any OpenAI-compatible server) to Hermes Agent via config.yaml and model_aliases.",
+  "category": "autonomous-ai-agents",
+  "path": "/home/sak/.hermes/skills/autonomous-ai-agents/custom-llm-providers/SKILL.md",
+  "skill_md_chars": 27311,
+  "desc_chars": 151
+ },
+ {
+  "skill": "hermes-agent",
+  "description": "Configure, extend, or contribute to Hermes Agent. Covers setup, configuration, models, providers, tools, skills, voice, gateway, MCP servers, plugins, cron, Kanban, delegation, session isolation, and troubleshooting. Includes a general open-source repo audit pattern for evaluating pull-worthiness (pre-update-assessment reference).",
+  "category": "autonomous-ai-agents",
+  "path": "/home/sak/.hermes/skills/autonomous-ai-agents/hermes-agent/SKILL.md",
+  "skill_md_chars": 26996,
+  "desc_chars": 332
+ },
+ {
+  "skill": "hermes-custom-provider",
+  "description": "Register a custom / non-built-in provider in Hermes Agent \u2014 config.yaml + models.py picker edits, pitfalls, verification. Use when adding any provider NOT in the built-in 40+ list.",
+  "category": "autonomous-ai-agents",
+  "path": "/home/sak/.hermes/skills/autonomous-ai-agents/hermes-custom-provider/SKILL.md",
+  "skill_md_chars": 7138,
+  "desc_chars": 180
+ },
+ {
+  "skill": "hermes-desktop-plugins",
+  "description": "Write desktop app plugins that add UI panes and commands.",
+  "category": "autonomous-ai-agents",
+  "path": "/home/sak/.hermes/skills/autonomous-ai-agents/hermes-desktop-plugins/SKILL.md",
+  "skill_md_chars": 6828,
+  "desc_chars": 57
+ },
+ {
+  "skill": "hermes-model-catalog-manage",
+  "description": "Show, filter, or extend the Hermes model picker catalog. Use when the user says 'remove X from model picker', 'hide models in /model list', 'disable openrouter models', or 'change what appears in the model dropdown'.",
+  "category": "autonomous-ai-agents",
+  "path": "/home/sak/.hermes/skills/autonomous-ai-agents/hermes-model-catalog-manage/SKILL.md",
+  "skill_md_chars": 8507,
+  "desc_chars": 216
+ },
+ {
+  "skill": "hermes-model-switching",
+  "description": "Session-scoped Hermes model switching with smart persistence and provider selection. Handles the user's preference for concise, end-to-end delivery with safe defaults for model/provider workflows.",
+  "category": "autonomous-ai-agents",
+  "path": "/home/sak/.hermes/skills/autonomous-ai-agents/hermes-model-switching/SKILL.md",
+  "skill_md_chars": 7005,
+  "desc_chars": 196
+ },
+ {
+  "skill": "merge-reconciler",
+  "description": "Neutral third-party resolution of agent merge conflicts.",
+  "category": "autonomous-ai-agents",
+  "path": "/home/sak/.hermes/skills/autonomous-ai-agents/merge-reconciler/SKILL.md",
+  "skill_md_chars": 7574,
+  "desc_chars": 56
+ },
+ {
+  "skill": "page-agent-hermes",
+  "description": ">- Guide for the page-agent-hermes MCP server \u2014 a Playwright-based ReAct web browsing agent that runs as a Hermes MCP stdio tool. Covers connection troubleshooting, use case selection (when agent_execute beats Hermes native tools vs when it doesn't), and applied fixes.",
+  "category": "autonomous-ai-agents",
+  "path": "/home/sak/.hermes/skills/autonomous-ai-agents/page-agent-hermes/SKILL.md",
+  "skill_md_chars": 7572,
+  "desc_chars": 269
+ },
+ {
+  "skill": "pithagoras-nav",
+  "description": "Navigate and control a Pithagoras AI agent instance via its REST API. Covers auth, sessions, models, MCP, channels, routines, and workspace management.",
+  "category": "autonomous-ai-agents",
+  "path": "/home/sak/.hermes/skills/autonomous-ai-agents/pithagoras-nav/SKILL.md",
+  "skill_md_chars": 17723,
+  "desc_chars": 151
+ },
+ {
+  "skill": "typed-decision-routing",
+  "description": "Use when designing or validating a typed-decision router.",
+  "category": "autonomous-ai-agents",
+  "path": "/home/sak/.hermes/skills/autonomous-ai-agents/typed-decision-routing/SKILL.md",
+  "skill_md_chars": 4300,
+  "desc_chars": 57
+ },
+ {
+  "skill": "beckman-access-total-bhcg-dxi",
+  "description": "Knowledge base from the Beckman Coulter Access Total \u03b2hCG kit insert (WB A33380A) for the UniCel DxI analyzer. Use when auditing or writing SOPs for \u03b2hCG testing, interpreting hCG results in pregnancy/ectopic/trophoblastic contexts, configuring DxI test methods (T\u03b2hCG2/Dil-hCG2), or verifying assay performance specs.",
+  "category": "",
+  "path": "/home/sak/.hermes/skills/beckman-access-total-bhcg-dxi/SKILL.md",
+  "skill_md_chars": 11313,
+  "desc_chars": 318
+ },
+ {
+  "skill": "beckman-au-enzymes",
+  "description": "Beckman Coulter AU-series Clinical Chemistry Reagent Guide - Section 1: Enzymes & Metabolites (2009-2010 revision). Technical reference for AU400/AU600/AU640/AU2700/AU5400/AU680/AU480 analyzers. IFU guides, Setting Sheets, codes, procedures, interferences, and calibration for 35+ Beckman Coulter chemistry reagents.",
+  "category": "",
+  "path": "/home/sak/.hermes/skills/beckman-au-enzymes/SKILL.md",
+  "skill_md_chars": 17998,
+  "desc_chars": 316
+ },
+ {
+  "skill": "beckman-au-immunology",
+  "description": "",
+  "category": "",
+  "path": "/home/sak/.hermes/skills/beckman-au-immunology/SKILL.md",
+  "skill_md_chars": 10723,
+  "desc_chars": 0
+ },
+ {
+  "skill": "beckman-au-reference",
+  "description": "",
+  "category": "",
+  "path": "/home/sak/.hermes/skills/beckman-au-reference/SKILL.md",
+  "skill_md_chars": 5063,
+  "desc_chars": 0
+ },
+ {
+  "skill": "beckman-haptoglobin",
+  "description": "Beckman Coulter Haptoglobin (OSR6165) IFU knowledge base \u2014 OSR6165 4\u00d716.5mL R1, 4\u00d74.5mL R2, immunoturbidimetric haptoglobin assay for AU/DxC AU analyzers. Use when interpreting haptoglobin results, setting up the assay, troubleshooting interferences, or auditing the OSR6165 kit insert.\" argument-hint: [topic, performance metric, interference, calibration, QC]",
+  "category": "",
+  "path": "/home/sak/.hermes/skills/beckman-haptoglobin/SKILL.md",
+  "skill_md_chars": 11587,
+  "desc_chars": 361
+ },
+ {
+  "skill": "book-to-skill",
+  "description": "Converts books and documents (PDF, EPUB, DOCX, HTML, Markdown, plain text, RTF, MOBI/AZW with Calibre) into structured agent skills, extracting frameworks, mental models, principles, techniques, and anti-patterns. Use when the user wants to study a document, apply an author's frameworks while working, or build a reusable knowledge base from a file.\" argument-hint: \"<path-to-document-folder-or-glob>... [skill-name-slug]",
+  "category": "",
+  "path": "/home/sak/.hermes/skills/book-to-skill/SKILL.md",
+  "skill_md_chars": 39563,
+  "desc_chars": 422
+ },
+ {
+  "skill": "calcitonin-kit-insert",
+  "description": "> Roche Elecsys Calcitonin (hCT) immunoassay kit insert (09005668500 V1) for cobas e 411/601/602 analyzers. Covers intended use, specimen requirements, reagent handling, storage/stability, interferences, cross-reactivities, analytical performance, and reference ranges. Use for lab SOP authoring, assay validation, interference checks, and clinical interpretation context (MTC, MEN2, calcium homeostasis). argument-hint: \"<query-or-section>",
+  "category": "",
+  "path": "/home/sak/.hermes/skills/calcitonin-kit-insert/SKILL.md",
+  "skill_md_chars": 9718,
+  "desc_chars": 440
+ },
+ {
+  "skill": "bri-patient-analysis",
+  "description": "Repeatable pipeline \u2014 read patient IDs from source sheet, cross-reference against BRI (Biomarker Reference Intervals) data in target sheet, compile abnormalities, update source sheet with verified findings.",
+  "category": "clinical",
+  "path": "/home/sak/.hermes/skills/clinical/bri-patient-analysis/SKILL.md",
+  "skill_md_chars": 9801,
+  "desc_chars": 206
+ },
+ {
+  "skill": "clinical-clarity",
+  "description": "Generate concise, human-sounding medical explanations for patients. Removes AI tone, analogies, and fluff. Uses simple language but keeps technical terms. Follows strict writing constraints.",
+  "category": "clinical",
+  "path": "/home/sak/.hermes/skills/clinical/clinical-clarity/SKILL.md",
+  "skill_md_chars": 3463,
+  "desc_chars": 190
+ },
+ {
+  "skill": "clinical-diagnostic-search",
+  "description": "> Search-based clinical diagnostic workflow for collating tests, thresholds, and guidelines for any medical condition. Proven on pre-eclampsia (2024 ACOG + Medscape + ARUP Consult). Use when the user asks for \"tests to diagnose X\", \"diagnostic workup for Y\", or \"labs for condition Z\".",
+  "category": "clinical",
+  "path": "/home/sak/.hermes/skills/clinical/clinical-diagnostic-search/SKILL.md",
+  "skill_md_chars": 5366,
+  "desc_chars": 285
+ },
+ {
+  "skill": "clinical-lab-interpretation",
+  "description": "Generate professional clinical interpretations/limitations for lab test catalogs. Combines RAG context (VDC SOPs + biochem reference) with structured medical writing to produce catalog-scale enrichment of test menus.",
+  "category": "clinical",
+  "path": "/home/sak/.hermes/skills/clinical/clinical-lab-interpretation/SKILL.md",
+  "skill_md_chars": 12407,
+  "desc_chars": 216
+ },
+ {
+  "skill": "clinical-web-research",
+  "description": ">- Master skill for clinical/biochemistry web research \u2014 covers ALL four tooling approaches (agent_execute, web_extract, Hermes Browserbase, web_search) in a unified workflow. Knows which tool works for which site and chains them together for maximum speed. For when you need diagnostic criteria, lab ranges, drug info, guidelines, or research papers and don't want to guess which approach will work.",
+  "category": "clinical",
+  "path": "/home/sak/.hermes/skills/clinical/clinical-web-research/SKILL.md",
+  "skill_md_chars": 6637,
+  "desc_chars": 400
+ },
+ {
+  "skill": "lab-inventory-systems",
+  "description": "Use when user asks lab reagent/QC stock or barcode systems.",
+  "category": "clinical",
+  "path": "/home/sak/.hermes/skills/clinical/lab-inventory-systems/SKILL.md",
+  "skill_md_chars": 8625,
+  "desc_chars": 59
+ },
+ {
+  "skill": "patient-query",
+  "description": "Answer patient lab queries with short, convincing replies.",
+  "category": "clinical",
+  "path": "/home/sak/.hermes/skills/clinical/patient-query/SKILL.md",
+  "skill_md_chars": 12584,
+  "desc_chars": 58
+ },
+ {
+  "skill": "blog-auditor",
+  "description": "> Audit blog content for website display. Rewrites for consistent heading hierarchy, direct evidence-based language, India-relevant medical context, patient-friendly tone, clean link hygiene, explicit image-placeholder alt text, and factual accuracy. Also supports minimal-change mode, inline change annotations, and a standalone change list. Use when asked to: review blog copy, fix blog formatting, prepare medical blog for website, audit content for VDC/health website.",
+  "category": "content",
+  "path": "/home/sak/.hermes/skills/content/blog-auditor/SKILL.md",
+  "skill_md_chars": 7988,
+  "desc_chars": 472
+ },
+ {
+  "skill": "direct-blog-auditor",
+  "description": "> Audit and correct blog content directly in Google Docs using replaceAllText. Reviews through doctor/lab-physician lens. Applies minimal changes (grammar, medical accuracy, promotional language) directly to the source document without rewriting the whole article. Generates exact before/after change list with reasons.",
+  "category": "content",
+  "path": "/home/sak/.hermes/skills/content/direct-blog-auditor/SKILL.md",
+  "skill_md_chars": 9448,
+  "desc_chars": 319
+ },
+ {
+  "skill": "explain-as-audio",
+  "description": "Generate simplified, jargon-free audio explanations of papers/articles/complex topics using Deepgram TTS (Luna voice). Researches material, rewrites in plain language with analogies, splits into sections under 2000 chars each, generates per-section MP3s.",
+  "category": "content",
+  "path": "/home/sak/.hermes/skills/content/explain-as-audio/SKILL.md",
+  "skill_md_chars": 3885,
+  "desc_chars": 254
+ },
+ {
+  "skill": "free-entertainment-apis",
+  "description": "Curated collection of free no-authentication APIs: JokeAPI, Useless Facts, Bored, Advice Slip, REST Countries, TVMaze, iTunes, TheMealDB, Open Food Facts, Cat Facts, CocktailDB, Affirmations, Kanye.rest. Plus zero-token cron delivery pattern.",
+  "category": "content",
+  "path": "/home/sak/.hermes/skills/content/free-entertainment-apis/SKILL.md",
+  "skill_md_chars": 7051,
+  "desc_chars": 242
+ },
+ {
+  "skill": "hermes-graphics-template-port",
+  "description": "Port motion-gen-2026 templates into hermes-graphics.",
+  "category": "content",
+  "path": "/home/sak/.hermes/skills/content/hermes-graphics-template-port/SKILL.md",
+  "skill_md_chars": 4929,
+  "desc_chars": 52
+ },
+ {
+  "skill": "html-to-video",
+  "description": "Render HTML/CSS/JS compositions to MP4 video using browser-based frameworks (HyperFrames, Remotion). Covers the full pipeline: RAG content ingestion \u2192 composition authoring (GSAP animations, data attributes) \u2192 linting \u2192 rendering \u2192 delivery.",
+  "category": "content",
+  "path": "/home/sak/.hermes/skills/content/html-to-video/SKILL.md",
+  "skill_md_chars": 23644,
+  "desc_chars": 241
+ },
+ {
+  "skill": "india-markets-eod-pnl-report",
+  "description": "Daily end-of-day P&L report for Indian market signals. Fetches EOD prices, compares with morning entry prices, calculates hypothetical P&L, and delivers report to Telegram + Email.",
+  "category": "content",
+  "path": "/home/sak/.hermes/skills/content/india-markets-eod-pnl-report/SKILL.md",
+  "skill_md_chars": 2684,
+  "desc_chars": 180
+ },
+ {
+  "skill": "infographic-carousel",
+  "description": "Generate a 5-24+ slide infographic carousel on any topic, render to PNG, upload to Google Drive, and email the shareable folder link. Dual data sources: Tavily web search (general) or VDC Qdrant RAG (clinical/biochem). Uses LLM HTML generation + local Playwright render server + Composio Drive & Gmail.",
+  "category": "content",
+  "path": "/home/sak/.hermes/skills/content/infographic-carousel/SKILL.md",
+  "skill_md_chars": 12439,
+  "desc_chars": 302
+ },
+ {
+  "skill": "linkedin-post-creator",
+  "description": ">- AI-powered LinkedIn post creator inspired by tarunkorat/claude-linkedin-post-creator. Researches top posts in your industry via Exa search, generates drafts in your voice with 5 tone variants, tracks performance over time, and delivers drafts to Telegram or email. No LinkedIn API needed for research + generation \u2014 profile is stored locally in Hermes memory. When linkedin-mcp or Composio LinkedIn is connected, also supports live profile sync and LinkedIn search.",
+  "category": "content",
+  "path": "/home/sak/.hermes/skills/content/linkedin-post-creator/SKILL.md",
+  "skill_md_chars": 3938,
+  "desc_chars": 468
+ },
+ {
+  "skill": "motion-graphics",
+  "description": "Generate motion graphics videos from scripts and beat sheets. CLI-first, agent-native, smart-mode first.",
+  "category": "content",
+  "path": "/home/sak/.hermes/skills/content/motion-graphics/SKILL.md",
+  "skill_md_chars": 23630,
+  "desc_chars": 104
+ },
+ {
+  "skill": "nsfw-random-post-batch",
+  "description": "Fetch 3 random top posts from curated NSFW subreddits using parallel batch fetching via Composio Reddit tool. Includes dedup, score-weighted picking, and format diversity.",
+  "category": "content",
+  "path": "/home/sak/.hermes/skills/content/nsfw-random-post-batch/SKILL.md",
+  "skill_md_chars": 6217,
+  "desc_chars": 171
+ },
+ {
+  "skill": "pexels-api",
+  "description": "Free stock photos and videos via Pexels API \u2014 search, download, and integrate into carousels, slides, and social content.",
+  "category": "content",
+  "path": "/home/sak/.hermes/skills/content/pexels-api/SKILL.md",
+  "skill_md_chars": 3812,
+  "desc_chars": 121
+ },
+ {
+  "skill": "prompt-carousel",
+  "description": "Takes research papers, raw data, or any source material and generates a CRISPE-enhanced prompt for converting it into high-quality Instagram carousel slides. Optimized for @drsaif.biochem branding (Deep Emerald Green / Royal Purple). Use when the user wants to turn a paper, dataset, article, or concept into a scroll-stopping carousel.",
+  "category": "content",
+  "path": "/home/sak/.hermes/skills/content/prompt-carousel/SKILL.md",
+  "skill_md_chars": 8291,
+  "desc_chars": 336
+ },
+ {
+  "skill": "rag-to-slide",
+  "description": "Full pipeline: RAG query a Qdrant collection \u2192 synthesize \u2192 generate N HTML slides \u2192 render to PNG \u2192 upload to Google Drive folder \u2192 share with user \u2192 email folder link. Any topic, any collection, any top_k.",
+  "category": "content",
+  "path": "/home/sak/.hermes/skills/content/rag-to-slide/SKILL.md",
+  "skill_md_chars": 15027,
+  "desc_chars": 207
+ },
+ {
+  "skill": "rag-to-video",
+  "description": "Full pipeline: RAG query a Qdrant collection \u2192 synthesize \u2192 generate N-second animated HyperFrames video \u2192 render to MP4 \u2192 deliver or upload to Google Drive. Any topic, any collection, any duration.",
+  "category": "content",
+  "path": "/home/sak/.hermes/skills/content/rag-to-video/SKILL.md",
+  "skill_md_chars": 19874,
+  "desc_chars": 198
+ },
+ {
+  "skill": "reel-autogen-drive-upload",
+  "description": "Upload reel-autogen generated videos to Google Drive via Composio MCP. Use when a reel-autogen video needs to be delivered to Google Drive.",
+  "category": "content",
+  "path": "/home/sak/.hermes/skills/content/reel-autogen-drive-upload/SKILL.md",
+  "skill_md_chars": 5938,
+  "desc_chars": 139
+ },
+ {
+  "skill": "short-form-creator",
+  "description": "Transforms medical/biochemistry content into 3 social formats \u2014 Instagram Carousels, LinkedIn Thought Leadership posts, and 60-second Video Scripts. Optimized for Dr. Saif's branding with Green/Purple palette. Use when repurposing PubMed articles, biochemistry content, or clinical insights into short-form social media.",
+  "category": "content",
+  "path": "/home/sak/.hermes/skills/content/short-form-creator/SKILL.md",
+  "skill_md_chars": 11724,
+  "desc_chars": 320
+ },
+ {
+  "skill": "style-catalog-assembly",
+  "description": "> Build image-catalog reference docs from a structured prompt/style list. For each style/item, generate or collect a representative image, insert it beside its prompt and label, compile into a Google Doc, enable public sharing, and deliver the link. Use when the user wants: style wildcard catalog with embedded images, prompt-reference lookup doc with per-style previews, mapped gallery to doc assembly, or \u201ccopy each image beside its prompt.\u201d",
+  "category": "content",
+  "path": "/home/sak/.hermes/skills/content/style-catalog-assembly/SKILL.md",
+  "skill_md_chars": 4278,
+  "desc_chars": 444
+ },
+ {
+  "skill": "video-grammar-system",
+  "description": "Video grammars and choreography for motion graphics.",
+  "category": "content",
+  "path": "/home/sak/.hermes/skills/content/video-grammar-system/SKILL.md",
+  "skill_md_chars": 929,
+  "desc_chars": 52
+ },
+ {
+  "skill": "webinar-prep",
+  "description": "Reproducible pipeline for creating expert-level biomedical webinar materials. Covers research, mastery document, audio briefing, flowcharts, Google Doc, and HTML/Google Slides presentation. Uses guizang-ppt-skill templates for professional slide decks.",
+  "category": "content",
+  "path": "/home/sak/.hermes/skills/content/webinar-prep/SKILL.md",
+  "skill_md_chars": 7215,
+  "desc_chars": 252
+ },
+ {
+  "skill": "access-cortisol-dxi",
+  "description": "Beckman Coulter Access Cortisol (WB A33262B, \u00a9 2006) for Access / SYNCHRON LXi / UniCel DxI analyzers. Paramagnetic-particle competitive CLIA for cortisol in serum, plasma (heparin, EDTA) and urine (extracted/unextracted). Cat 33600 reagent (100 tests, 2\u00d750); 33605 calibrators S0-S5 (0\u201360 \u00b5g/dL / 0\u20131655 nmol/L); 28-day cal; 25 \u00b5L sample; default \u00b5g/dL (\u00d727.59 = nmol/L). Verified 11-page extraction (`new_insert.pdf` + `new_full_text.txt`).\" argument-hint: \"<section> \u2014 e.g. 'interference thresholds', 'calibration frequency', 'reference intervals', 'dilution procedure', 'cross-reactivity', 'urine extraction', 'reagent composition",
+  "category": "",
+  "path": "/home/sak/.hermes/skills/cortisol-dxi/SKILL.md",
+  "skill_md_chars": 10816,
+  "desc_chars": 634
+ },
+ {
+  "skill": "architecture-diagram",
+  "description": "Dark-themed SVG architecture/cloud/infra diagrams as HTML.",
+  "category": "creative",
+  "path": "/home/sak/.hermes/skills/creative/architecture-diagram/SKILL.md",
+  "skill_md_chars": 5818,
+  "desc_chars": 58
+ },
+ {
+  "skill": "ascii-art",
+  "description": "ASCII art: pyfiglet, cowsay, boxes, image-to-ascii.",
+  "category": "creative",
+  "path": "/home/sak/.hermes/skills/creative/ascii-art/SKILL.md",
+  "skill_md_chars": 10384,
+  "desc_chars": 51
+ },
+ {
+  "skill": "baoyu-article-illustrator",
+  "description": "Article illustrations: type \u00d7 style \u00d7 palette consistency.",
+  "category": "creative",
+  "path": "/home/sak/.hermes/skills/creative/baoyu-article-illustrator/SKILL.md",
+  "skill_md_chars": 10010,
+  "desc_chars": 58
+ },
+ {
+  "skill": "claude-design",
+  "description": "Design one-off HTML artifacts (landing, deck, prototype).",
+  "category": "creative",
+  "path": "/home/sak/.hermes/skills/creative/claude-design/SKILL.md",
+  "skill_md_chars": 20468,
+  "desc_chars": 57
+ },
+ {
+  "skill": "ideation",
+  "description": "Generate project ideas via creative constraints.",
+  "category": "creative",
+  "path": "/home/sak/.hermes/skills/creative/creative-ideation/SKILL.md",
+  "skill_md_chars": 6252,
+  "desc_chars": 48
+ },
+ {
+  "skill": "design-read",
+  "description": "Use as a pre-step for any visual/content generation task. Audit signals first (page type, audience, vibe, constraints), set three global dials, then generate. Prevents generic AI aesthetics.",
+  "category": "creative",
+  "path": "/home/sak/.hermes/skills/creative/design-read/SKILL.md",
+  "skill_md_chars": 3722,
+  "desc_chars": 190
+ },
+ {
+  "skill": "drawio",
+  "description": "Generate .drawio XML diagrams and export to PNG/SVG/PDF using the native draw.io desktop CLI. Covers the full workflow: draft, self-check via vision, review loop, final export with embedded XML.",
+  "category": "creative",
+  "path": "/home/sak/.hermes/skills/creative/drawio/SKILL.md",
+  "skill_md_chars": 10547,
+  "desc_chars": 194
+ },
+ {
+  "skill": "excalidraw",
+  "description": "Hand-drawn Excalidraw JSON diagrams (arch, flow, seq).",
+  "category": "creative",
+  "path": "/home/sak/.hermes/skills/creative/excalidraw/SKILL.md",
+  "skill_md_chars": 7275,
+  "desc_chars": 54
+ },
+ {
+  "skill": "humanizer",
+  "description": "Humanize text: strip AI-isms and add real voice.",
+  "category": "creative",
+  "path": "/home/sak/.hermes/skills/creative/humanizer/SKILL.md",
+  "skill_md_chars": 31277,
+  "desc_chars": 48
+ },
+ {
+  "skill": "popular-web-designs",
+  "description": "54 real design systems (Stripe, Linear, Vercel) as HTML/CSS.",
+  "category": "creative",
+  "path": "/home/sak/.hermes/skills/creative/popular-web-designs/SKILL.md",
+  "skill_md_chars": 9716,
+  "desc_chars": 60
+ },
+ {
+  "skill": "sketch",
+  "description": "Throwaway HTML mockups: 2-3 design variants to compare.",
+  "category": "creative",
+  "path": "/home/sak/.hermes/skills/creative/sketch/SKILL.md",
+  "skill_md_chars": 9628,
+  "desc_chars": 55
+ },
+ {
+  "skill": "optimal-extraction",
+  "description": "Use when building or querying a skill from a large source. Parse structure by code, generate meaning, verify against source, and ship an index for cheap lookup.",
+  "category": "data-pipelines",
+  "path": "/home/sak/.hermes/skills/data-pipelines/optimal-extraction/SKILL.md",
+  "skill_md_chars": 16625,
+  "desc_chars": 160
+ },
+ {
+  "skill": "sheet-to-sheet",
+  "description": "Upload Excel to Google Sheets via Composio MCP.",
+  "category": "data-pipelines",
+  "path": "/home/sak/.hermes/skills/data-pipelines/sheet-to-sheet/SKILL.md",
+  "skill_md_chars": 6895,
+  "desc_chars": 47
+ },
+ {
+  "skill": "actualized-persona",
+  "description": "Query Actualized.org collection \u2192 absorb chunks into persona \u2192 reply as human embodiment, not citation bot",
+  "category": "data-science",
+  "path": "/home/sak/.hermes/skills/data-science/actualized-persona/SKILL.md",
+  "skill_md_chars": 8006,
+  "desc_chars": 106
+ },
+ {
+  "skill": "analysis-catalog",
+  "description": "Maintain a searchable analysis catalog of repositories, tools, APIs, or resources. Covers session archaeology, template-based entry writing, batch README/SUMMARY updates, and commit-push cycles. Use when asked to \"update the repo catalog\", \"catalog the repos we analyzed\", \"find missed analyses from past sessions\", or \"batch-add entries to the discovery repo\".",
+  "category": "data-science",
+  "path": "/home/sak/.hermes/skills/data-science/analysis-catalog/SKILL.md",
+  "skill_md_chars": 5154,
+  "desc_chars": 361
+ },
+ {
+  "skill": "best-stocks",
+  "description": "> Multi-factor stock screening methodology combining technical analysis (RSI, MACD, VWAP, SMA structure), snapshot fundamentals (PE, PB, margin, revenue growth), trailing fundamental trends (ROE, D/E trajectory, interest coverage from quarterly financials), and analyst consensus. For ranking and presenting highest-conviction long candidates from the india-markets scanner. Not a portfolio constructor \u2014 does not provide position sizing, correlation management, or total exposure limits.",
+  "category": "data-science",
+  "path": "/home/sak/.hermes/skills/data-science/best-stocks/SKILL.md",
+  "skill_md_chars": 10947,
+  "desc_chars": 488
+ },
+ {
+  "skill": "biochem-persona",
+  "description": "Inhabit the Tietz Clinical Chemistry textbook \u2014 answer as a senior clinical biochemist, first-person, no citations",
+  "category": "data-science",
+  "path": "/home/sak/.hermes/skills/data-science/biochem-persona/SKILL.md",
+  "skill_md_chars": 11062,
+  "desc_chars": 114
+ },
+ {
+  "skill": "ccxt-crypto-trading",
+  "description": "Best practices for extracting quantitative crypto market data (funding rates, spreads, volume) using CCXT, free alpha APIs, and integrating headless scripts with Composio MCP via cron.",
+  "category": "data-science",
+  "path": "/home/sak/.hermes/skills/data-science/ccxt-crypto-trading/SKILL.md",
+  "skill_md_chars": 46885,
+  "desc_chars": 184
+ },
+ {
+  "skill": "deep-rag",
+  "description": "Deep-dive RAG research pipeline \u2014 LLM reranked retrieval across 4 Qdrant collections (221K vectors) + LLM synthesis. For thorough, citation-quality answers where speed is secondary to accuracy.",
+  "category": "data-science",
+  "path": "/home/sak/.hermes/skills/data-science/deep-rag/SKILL.md",
+  "skill_md_chars": 9901,
+  "desc_chars": 193
+ },
+ {
+  "skill": "drive-image-analysis",
+  "description": ">- Systematically audit and classify images in a Google Drive folder using vision analysis AI. Produces a structured style-to-image-ID mapping for populating Google Docs or other catalogs.",
+  "category": "data-science",
+  "path": "/home/sak/.hermes/skills/data-science/drive-image-analysis/SKILL.md",
+  "skill_md_chars": 5989,
+  "desc_chars": 188
+ },
+ {
+  "skill": "index-funds",
+  "description": "> Indian index fund selection methodology for long-term investing. Covers Nifty 50 core and Nifty Next 50 satellite allocations, expense-ratio optimization, AUM adequacy, tracking error, SIP vs lump sum, and source verification. Based on independently cross-checked data across multiple AMC sites and aggregators (Groww, INDmoney, ETMoney, ValueResearch, Zerodha Coin). Not financial advice \u2014 all figures must be verified on the AMC's official factsheet before investing.",
+  "category": "data-science",
+  "path": "/home/sak/.hermes/skills/data-science/index-funds/SKILL.md",
+  "skill_md_chars": 8251,
+  "desc_chars": 471
+ },
+ {
+  "skill": "indian-markets",
+  "description": "Indian stock market (NSE/BSE) and mutual fund scanner with buy/sell signals, India VIX tracking, and Composio MCP Google Sheets integration. Free data sources (yfinance, mfapi.in), no API keys required.",
+  "category": "data-science",
+  "path": "/home/sak/.hermes/skills/data-science/indian-markets/SKILL.md",
+  "skill_md_chars": 19852,
+  "desc_chars": 202
+ },
+ {
+  "skill": "jupyter-live-kernel",
+  "description": "Iterative Python via live Jupyter kernel (hamelnb).",
+  "category": "data-science",
+  "path": "/home/sak/.hermes/skills/data-science/jupyter-live-kernel/SKILL.md",
+  "skill_md_chars": 5273,
+  "desc_chars": 51
+ },
+ {
+  "skill": "loop-engineering",
+  "description": "> Stateful loop methodology for two patterns: (1) gated decision loops with verdict derivation, and (2) cron-driven agent pipelines with durable state. Use when scaffolding loop structure, auditing readiness, adding triage hooks, wiring pipelines into LOOP.md/STATE.md/loop-run-log.md, running the 4-layer verdict protocol, or wiring safe cron hooks with || true guard.",
+  "category": "data-science",
+  "path": "/home/sak/.hermes/skills/data-science/loop-engineering/SKILL.md",
+  "skill_md_chars": 18485,
+  "desc_chars": 369
+ },
+ {
+  "skill": "macbook-loop-analysis",
+  "description": "> Loop Engineering methodology applied specifically to MacBook/Mac purchase decisions. Gate-based L1 triage loop with token-budgeted research, kill switches, and stateful audit trail. Use when the user is evaluating a MacBook for AI/ML, local LLM, or professional use and needs a defensible BUY/HOLD/REJECT verdict with full state tracking. Covers spec verification, model capacity benchmarks, resale math, warranty valuation, physical inspection checklist, and value economics (MLX differential, battery warranty shield, power cost). Communication style: front-load the answer, then support with detail. No analogies unless asked. No enthusiasm flourishes. Dense and precise. User is a technical professional; preserve that register.",
+  "category": "data-science",
+  "path": "/home/sak/.hermes/skills/data-science/macbook-loop-analysis/SKILL.md",
+  "skill_md_chars": 13329,
+  "desc_chars": 734
+ },
+ {
+  "skill": "me-skill",
+  "description": "Deep psychological and contextual analysis of Sak's underlying motivations, fears, and priorities to guide Noor's responses and provide high-agency support.",
+  "category": "data-science",
+  "path": "/home/sak/.hermes/skills/data-science/me-skill/SKILL.md",
+  "skill_md_chars": 20579,
+  "desc_chars": 156
+ },
+ {
+  "skill": "mega-rag-synthesize",
+  "description": "Synthesize all 6 RAG collections + PubMed into a unified clinical recommendation",
+  "category": "data-science",
+  "path": "/home/sak/.hermes/skills/data-science/mega-rag-synthesize/SKILL.md",
+  "skill_md_chars": 2611,
+  "desc_chars": 80
+ },
+ {
+  "skill": "noor-persona",
+  "description": "Inhabit Noor \u2014 a warm, grounded female AI companion who knows Sak deeply. First-person voice replies via Telegram TTS (Neerja en-IN).",
+  "category": "data-science",
+  "path": "/home/sak/.hermes/skills/data-science/noor-persona/SKILL.md",
+  "skill_md_chars": 20990,
+  "desc_chars": 133
+ },
+ {
+  "skill": "qdrant-rag",
+  "description": "Qdrant RAG verification via Nomic embed + query_points.",
+  "category": "data-science",
+  "path": "/home/sak/.hermes/skills/data-science/qdrant-rag/SKILL.md",
+  "skill_md_chars": 4112,
+  "desc_chars": 55
+ },
+ {
+  "skill": "rag-collection-integration",
+  "description": "Use when adding a new Qdrant collection to the RAG stack.",
+  "category": "data-science",
+  "path": "/home/sak/.hermes/skills/data-science/rag-collection-integration/SKILL.md",
+  "skill_md_chars": 4948,
+  "desc_chars": 57
+ },
+ {
+  "skill": "rag-to-antislop",
+  "description": "RAG fact-check, then Sepia + simple-english.",
+  "category": "data-science",
+  "path": "/home/sak/.hermes/skills/data-science/rag-to-antislop/SKILL.md",
+  "skill_md_chars": 10290,
+  "desc_chars": 44
+ },
+ {
+  "skill": "soffos-rag",
+  "description": "RAG Engine for Qdrant Cloud (13 collections, 240K+ vectors) + Nomic embeddings + Hermes LLM (OpenRouter/DeepSeek). Query the vector DB across biochem, internal medicine, sports medicine, structured docs, coding tutorials, lab quality, personal notes, and 3 living collections.",
+  "category": "data-science",
+  "path": "/home/sak/.hermes/skills/data-science/soffos-rag/SKILL.md",
+  "skill_md_chars": 24503,
+  "desc_chars": 276
+ },
+ {
+  "skill": "spirituality",
+  "description": "Query actualized + alan-watts collections with reranking + web search fallback \u2192 combine with Osho, Ramana Maharshi, Ramesh Balsekar perspectives \u2192 reply as embodied wisdom, not citation bot",
+  "category": "data-science",
+  "path": "/home/sak/.hermes/skills/data-science/spirituality/SKILL.md",
+  "skill_md_chars": 11475,
+  "desc_chars": 190
+ },
+ {
+  "skill": "therapy",
+  "description": "> CBT-informed decision-quality framework for high-stakes decisions. Not therapy \u2014 structured interrogation of bias, fear, and cognitive schemas that override rational analysis. Use when a user is stuck on a decision despite having clear technical/economic analysis, or when emotional factors (guilt, fear, family obligation, self-doubt, FOMO, schema-driven paralysis) are the blocking variable, not the facts. Triggers: \"I can't decide,\" \"I'm overthinking,\" \"I feel guilty,\" \"what if I'm wrong,\" \"am I making a mistake,\" \"doubt despite logic.",
+  "category": "data-science",
+  "path": "/home/sak/.hermes/skills/data-science/therapy/SKILL.md",
+  "skill_md_chars": 6445,
+  "desc_chars": 543
+ },
+ {
+  "skill": "trading-debate-layer",
+  "description": "Add a bull/bear/risk debate filter to an existing trading scanner. Reads scanner JSON output, runs a single batched LLM debate on top candidates via the Hermes CLI (default model), writes augmented JSON. Safe by default \u2014 enabled only via env var, uses Hermes' own model.",
+  "category": "data-science",
+  "path": "/home/sak/.hermes/skills/data-science/trading-debate-layer/SKILL.md",
+  "skill_md_chars": 6345,
+  "desc_chars": 271
+ },
+ {
+  "skill": "cron-agent-mcp-debugging",
+  "description": "Debug cron MCP tool call failures \u2014 connector vs model JSON.",
+  "category": "devops",
+  "path": "/home/sak/.hermes/skills/devops/cron-agent-mcp-debugging/SKILL.md",
+  "skill_md_chars": 6792,
+  "desc_chars": 60
+ },
+ {
+  "skill": "cron-job-troubleshooting",
+  "description": "Debug and fix failing cron jobs. Use when a cron job shows last_status='error', has an unexpected failure, or needs model/provider updates. Covers diagnosis workflow (check status \u2192 run manually to see error), common failure patterns, and safe update procedures.",
+  "category": "devops",
+  "path": "/home/sak/.hermes/skills/devops/cron-job-troubleshooting/SKILL.md",
+  "skill_md_chars": 22381,
+  "desc_chars": 262
+ },
+ {
+  "skill": "cron-monitoring",
+  "description": "Cron-based polling and notification systems \u2014 schedule, API fetch, data processing, dedup, alert delivery.",
+  "category": "devops",
+  "path": "/home/sak/.hermes/skills/devops/cron-monitoring/SKILL.md",
+  "skill_md_chars": 16122,
+  "desc_chars": 106
+ },
+ {
+  "skill": "hermes-graphics",
+  "description": "Operate and recover hermes-graphics video renders.",
+  "category": "devops",
+  "path": "/home/sak/.hermes/skills/devops/hermes-graphics/SKILL.md",
+  "skill_md_chars": 8664,
+  "desc_chars": 50
+ },
+ {
+  "skill": "hermes-safe-update",
+  "description": "Rollback-safe Hermes upstream update with fallbacks.",
+  "category": "devops",
+  "path": "/home/sak/.hermes/skills/devops/hermes-safe-update/SKILL.md",
+  "skill_md_chars": 4347,
+  "desc_chars": 52
+ },
+ {
+  "skill": "hermes-upstream-update",
+  "description": "Use when pulling upstream Hermes updates into the checkout.",
+  "category": "devops",
+  "path": "/home/sak/.hermes/skills/devops/hermes-upstream-update/SKILL.md",
+  "skill_md_chars": 4933,
+  "desc_chars": 59
+ },
+ {
+  "skill": "kanban-orchestrator",
+  "description": "Decomposition playbook + anti-temptation rules for an orchestrator profile routing work through Kanban. The \"don't do the work yourself\" rule and the basic lifecycle are auto-injected into every kanban worker's system prompt; this skill is the deeper playbook when you're specifically playing the orchestrator role.",
+  "category": "devops",
+  "path": "/home/sak/.hermes/skills/devops/kanban-orchestrator/SKILL.md",
+  "skill_md_chars": 15747,
+  "desc_chars": 315
+ },
+ {
+  "skill": "koofr-hermes",
+  "description": "Operational guide for the koofr-hermes Flask app running on Android Termux (OnePlus 5, Tailscale 100.70.18.84:5000). Covers template deployment, server restart, Flask install, the reel view debugging patterns, and the mobile responsive + click-to-reel-from-position patterns added this session.",
+  "category": "devops",
+  "path": "/home/sak/.hermes/skills/devops/koofr-hermes/SKILL.md",
+  "skill_md_chars": 12885,
+  "desc_chars": 294
+ },
+ {
+  "skill": "leverage-skill",
+  "description": "Asset discovery and reuse planning. Run before building anything new. Maps the user's existing 97+ repos, 192 skills, 49 local projects, and live services against a proposed task to maximize reuse and minimize scratch work. Outputs a leverage plan with reuse %, blockers, and required net-new work.",
+  "category": "devops",
+  "path": "/home/sak/.hermes/skills/devops/leverage-skill/SKILL.md",
+  "skill_md_chars": 9482,
+  "desc_chars": 298
+ },
+ {
+  "skill": "local-model-benchmark",
+  "description": "Benchmark local MLX/llama.cpp models via API \u2014 measure tokens/second, not just latency. Use when comparing local models (Ornith, Qwen3, etc.) against remote APIs or each other.",
+  "category": "devops",
+  "path": "/home/sak/.hermes/skills/devops/local-model-benchmark/SKILL.md",
+  "skill_md_chars": 5072,
+  "desc_chars": 176
+ },
+ {
+  "skill": "moneyprinterturbo-automation",
+  "description": "How to automate video generation pipelines using MoneyPrinterTurbo's API and its reel-autogen fork, integrated with the Hermes agent setup.",
+  "category": "devops",
+  "path": "/home/sak/.hermes/skills/devops/moneyprinterturbo-automation/SKILL.md",
+  "skill_md_chars": 18690,
+  "desc_chars": 139
+ },
+ {
+  "skill": "openship-setup",
+  "description": "Deploy and operate the Openship self-hosted deployment platform control plane on Android Termux, with MCP server for Hermes integration. Covers installation, admin setup, PAT token creation, MCP configuration, and deployment pipeline.",
+  "category": "devops",
+  "path": "/home/sak/.hermes/skills/devops/openship-setup/SKILL.md",
+  "skill_md_chars": 13713,
+  "desc_chars": 234
+ },
+ {
+  "skill": "reel-autogen-setup",
+  "description": "reel-autogen video pipeline setup, LLM provider chain, watermark, Google Drive upload, and common fixes",
+  "category": "devops",
+  "path": "/home/sak/.hermes/skills/devops/reel-autogen-setup/SKILL.md",
+  "skill_md_chars": 16017,
+  "desc_chars": 103
+ },
+ {
+  "skill": "sdlc-review",
+  "description": "Review Kanban handoffs and route verified outcomes.",
+  "category": "devops",
+  "path": "/home/sak/.hermes/skills/devops/sdlc-review/SKILL.md",
+  "skill_md_chars": 9065,
+  "desc_chars": 51
+ },
+ {
+  "skill": "server-diagnostics",
+  "description": ">- Health audits, resource diagnostics, and safe disk recovery for Linux VPS servers. Covers full-stack system checks \u2014 disk, RAM, CPU, swap, Docker, journal logs \u2014 with targeted space-recovery actions and risk-tiered recommendations.",
+  "category": "devops",
+  "path": "/home/sak/.hermes/skills/devops/server-diagnostics/SKILL.md",
+  "skill_md_chars": 21965,
+  "desc_chars": 234
+ },
+ {
+  "skill": "ssh-mastery",
+  "description": "Complete reference for VPS and Termux SSH pipeline \u2014 proxy server, remote execution, Hermes integration, and infrastructure management. Companion tunnel repo is tunnel-mastery.",
+  "category": "devops",
+  "path": "/home/sak/.hermes/skills/devops/ssh-mastery/SKILL.md",
+  "skill_md_chars": 28434,
+  "desc_chars": 176
+ },
+ {
+  "skill": "ssh-remote-backend",
+  "description": ">- Configure and troubleshoot Hermes Agent's SSH terminal backend to run commands inside a remote machine (VPS, Termux, Docker host, lab server). Covers SSH setup, reverse tunnels, Tailscale networking, config env vars, and connectivity diagnosis. Use when the user wants to run Hermes commands on a remote host, connect to a VPS/mobile device for automation, or set up a remote terminal backend.",
+  "category": "devops",
+  "path": "/home/sak/.hermes/skills/devops/ssh-remote-backend/SKILL.md",
+  "skill_md_chars": 27958,
+  "desc_chars": 396
+ },
+ {
+  "skill": "ssh-vps-explorer",
+  "description": "Navigate, deploy, and optimize applications on Linux VPS servers via SSH. Covers connection patterns, Docker/Coolify deployment, performance tuning, and maintenance workflows. Use when managing remote VPS instances, deploying applications, or troubleshooting server performance.",
+  "category": "devops",
+  "path": "/home/sak/.hermes/skills/devops/ssh-vps-explorer/SKILL.md",
+  "skill_md_chars": 15697,
+  "desc_chars": 278
+ },
+ {
+  "skill": "tailscale-access",
+  "description": "Expose a local web service (Flask, FastAPI, etc.) running on Termux or any Tailscale-connected device to your entire tailnet in 3 steps. No SSH tunnel, no Cloudflare, no public exposure.",
+  "category": "devops",
+  "path": "/home/sak/.hermes/skills/devops/tailscale-access/SKILL.md",
+  "skill_md_chars": 4212,
+  "desc_chars": 186
+ },
+ {
+  "skill": "termux-endpoint",
+  "description": "Use when configuring or troubleshooting an Android Termux device as an SSH terminal backend or a persistent server endpoint for Hermes.",
+  "category": "devops",
+  "path": "/home/sak/.hermes/skills/devops/termux-endpoint/SKILL.md",
+  "skill_md_chars": 26035,
+  "desc_chars": 135
+ },
+ {
+  "skill": "termux-reboot",
+  "description": "Full post-reboot recovery workflow for Termux (Android). Heals SSH, starts services, restores tunnels. Run after any Termux/phone reboot.",
+  "category": "devops",
+  "path": "/home/sak/.hermes/skills/devops/termux-reboot/SKILL.md",
+  "skill_md_chars": 3983,
+  "desc_chars": 137
+ },
+ {
+  "skill": "tool-discovery",
+  "description": "Evaluate third-party repos/tools for Hermes integration \u2014 analyze, map to existing skills, assess fit, and install when appropriate.",
+  "category": "devops",
+  "path": "/home/sak/.hermes/skills/devops/tool-discovery/SKILL.md",
+  "skill_md_chars": 40389,
+  "desc_chars": 132
+ },
+ {
+  "skill": "update-cron-provider",
+  "description": "Fix provider/model drift skips in Hermes cron jobs.",
+  "category": "devops",
+  "path": "/home/sak/.hermes/skills/devops/update-cron-provider/SKILL.md",
+  "skill_md_chars": 3614,
+  "desc_chars": 51
+ },
+ {
+  "skill": "webhook-subscriptions",
+  "description": "Webhook subscriptions: event-driven agent runs.",
+  "category": "devops",
+  "path": "/home/sak/.hermes/skills/devops/webhook-subscriptions/SKILL.md",
+  "skill_md_chars": 6811,
+  "desc_chars": 47
+ },
+ {
+  "skill": "edu-ppt",
+  "description": "Use when making a Google Slides deck via Composio MCP.",
+  "category": "",
+  "path": "/home/sak/.hermes/skills/edu-ppt/SKILL.md",
+  "skill_md_chars": 7947,
+  "desc_chars": 54
+ },
+ {
+  "skill": "email-inbox-triage",
+  "description": "Triage an inbox: prioritize threads, draft replies safely.",
+  "category": "email",
+  "path": "/home/sak/.hermes/skills/email/email-inbox-triage/SKILL.md",
+  "skill_md_chars": 5435,
+  "desc_chars": 58
+ },
+ {
+  "skill": "himalaya",
+  "description": "Himalaya CLI: IMAP/SMTP email from terminal.",
+  "category": "email",
+  "path": "/home/sak/.hermes/skills/email/himalaya/SKILL.md",
+  "skill_md_chars": 7254,
+  "desc_chars": 44
+ },
+ {
+  "skill": "frosty-ppt",
+  "description": "Create Google Slides decks with frosted glass themes.",
+  "category": "",
+  "path": "/home/sak/.hermes/skills/frosty-ppt/SKILL.md",
+  "skill_md_chars": 16741,
+  "desc_chars": 53
+ },
+ {
+  "skill": "github",
+  "description": "Unified GitHub workflow library covering authentication, repository management, pull requests, code review, issues, and code search. Use for any GitHub-related task \u2014 setup, repo creation, PR lifecycle, CI troubleshooting, issue triage, semantic code search, and cross-account repo audits.",
+  "category": "",
+  "path": "/home/sak/.hermes/skills/github/SKILL.md",
+  "skill_md_chars": 8707,
+  "desc_chars": 289
+ },
+ {
+  "skill": "github-issue-to-pr",
+  "description": "Carry a GitHub issue to a verified PR with honest CI state.",
+  "category": "github",
+  "path": "/home/sak/.hermes/skills/github/github-issue-to-pr/SKILL.md",
+  "skill_md_chars": 6042,
+  "desc_chars": 59
+ },
+ {
+  "skill": "copy-images-to-docs",
+  "description": ">- Take a mapping of style names to Drive image IDs and populate a public Google Doc with formatted entries: numbered style name, full AI prompt, and verified representative image. Handles bulk image insertion via markdown and incremental section updates.",
+  "category": "google-workspace",
+  "path": "/home/sak/.hermes/skills/google-workspace/copy-images-to-docs/SKILL.md",
+  "skill_md_chars": 6267,
+  "desc_chars": 255
+ },
+ {
+  "skill": "1minai-api",
+  "description": "1minAI proxy \u2014 OpenAI-compatible API on Render. Custom provider for Hermes Agent with gpt-4o-mini, gemini, claude models.",
+  "category": "hermes-agent",
+  "path": "/home/sak/.hermes/skills/hermes-agent/1minai-api/SKILL.md",
+  "skill_md_chars": 9130,
+  "desc_chars": 121
+ },
+ {
+  "skill": "epic-biochem-workflows",
+  "description": "Sak's signature workflows combining scientific skills, research APIs, Vercel skills, and n8n \u2014 for biochem content automation, clinical research, and carousel pipeline",
+  "category": "hermes-agent",
+  "path": "/home/sak/.hermes/skills/hermes-agent/epic-biochem-workflows/SKILL.md",
+  "skill_md_chars": 17378,
+  "desc_chars": 167
+ },
+ {
+  "skill": "hermes-gateway-guard",
+  "description": "Use when commands or scripts trip the gateway guard.",
+  "category": "hermes-agent",
+  "path": "/home/sak/.hermes/skills/hermes-agent/hermes-gateway-guard/SKILL.md",
+  "skill_md_chars": 3109,
+  "desc_chars": 52
+ },
+ {
+  "skill": "hermes-memory-archive",
+  "description": "Use when injected memory nears its cap and needs trimming.",
+  "category": "hermes-agent",
+  "path": "/home/sak/.hermes/skills/hermes-agent/hermes-memory-archive/SKILL.md",
+  "skill_md_chars": 4674,
+  "desc_chars": 58
+ },
+ {
+  "skill": "notebooklm-auth-fix",
+  "description": "Recover from expired Google auth with nlm CLI and MCP server. Covers local Chrome fix, VPS sync, and deployment pitfalls.",
+  "category": "hermes-agent",
+  "path": "/home/sak/.hermes/skills/hermes-agent/notebooklm-auth-fix/SKILL.md",
+  "skill_md_chars": 2544,
+  "desc_chars": 121
+ },
+ {
+  "skill": "openrouter-custom-models",
+  "description": "Add custom models to Hermes Agent's OpenRouter/Providers model picker and set quick-access CLI aliases.",
+  "category": "hermes-agent",
+  "path": "/home/sak/.hermes/skills/hermes-agent/openrouter-custom-models/SKILL.md",
+  "skill_md_chars": 18820,
+  "desc_chars": 103
+ },
+ {
+  "skill": "research-paper-apis",
+  "description": "Free/no-key biomedical literature APIs \u2014 PubMed E-utilities, OpenAlex, Semantic Scholar, Crossref. Script at ~/.hermes/scripts/research-apis.py",
+  "category": "hermes-agent",
+  "path": "/home/sak/.hermes/skills/hermes-agent/research-paper-apis/SKILL.md",
+  "skill_md_chars": 4650,
+  "desc_chars": 143
+ },
+ {
+  "skill": "hmnr-aug-26-stock",
+  "description": "Biochemistry reagent consumption audit knowledge base from HMNR Himayathnagar Lab August 2026 report \u2014 76 reagents across 3 AU instruments, 16 anomalies, shortages, QC patterns, inter-branch transfers.",
+  "category": "",
+  "path": "/home/sak/.hermes/skills/hmnr-aug-26-stock/SKILL.md",
+  "skill_md_chars": 15107,
+  "desc_chars": 201
+ },
+ {
+  "skill": "igm-optilite-kit",
+  "description": "Knowledge base from the Optilite IgM Kit Insert (INS012.OPT, 11 Aug 2015) by The Binding Site Group Ltd. Quantitative turbidimetric IgM assay for the Optilite analyser. Use when performing, validating, troubleshooting, or auditing IgM measurement on Optilite; referencing measuring ranges, precision CVs, expected values, interference thresholds, control acceptance limits, or reagent preparation/storage rules.",
+  "category": "",
+  "path": "/home/sak/.hermes/skills/igm-optilite-kit/SKILL.md",
+  "skill_md_chars": 11716,
+  "desc_chars": 411
+ },
+ {
+  "skill": "imark-reader",
+  "description": "Technical knowledge base from the Bio-Rad iMark Microplate Absorbance Reader Instruction Manual. Use when configuring, operating, troubleshooting, or programming the iMark reader, or when setting up end-point/kinetic ELISA protocols, cutoff values, standard curves, plate mappings, and instrument maintenance.",
+  "category": "",
+  "path": "/home/sak/.hermes/skills/imark-reader/SKILL.md",
+  "skill_md_chars": 8162,
+  "desc_chars": 309
+ },
+ {
+  "skill": "composio-fallback-pattern",
+  "description": ">- Handle Composio tool failures (rate limits, HTTP 429/500 errors) by falling back to alternative tools. Documents the pattern of trying primary \u2192 fallback \u2192 last resort, with Agent Reach (rdt-cli) as a concrete example for Reddit access.",
+  "category": "integration",
+  "path": "/home/sak/.hermes/skills/integration/composio-fallback-pattern/SKILL.md",
+  "skill_md_chars": 4299,
+  "desc_chars": 239
+ },
+ {
+  "skill": "composio-google-docs",
+  "description": "Google Docs via Composio MCP \u2014 chunked fills, safe deletes.",
+  "category": "integration",
+  "path": "/home/sak/.hermes/skills/integration/composio-google-docs/SKILL.md",
+  "skill_md_chars": 11061,
+  "desc_chars": 59
+ },
+ {
+  "skill": "composio-mcp-direct",
+  "description": ">- Reference for Composio JSON-RPC with a Bearer token. In THIS environment Hermes uses OAuth (no composio.json token file exists), so this path is effectively DEAD \u2014 prefer the native mcp__composio__* session tools. Kept as a fallback reference only when a real token file is present.",
+  "category": "integration",
+  "path": "/home/sak/.hermes/skills/integration/composio-mcp-direct/SKILL.md",
+  "skill_md_chars": 6864,
+  "desc_chars": 285
+ },
+ {
+  "skill": "digitalcore-api",
+  "description": "DigitalCore.club private torrent tracker API integration. Poll latest torrents, download .torrent files, scrape metadata. Limited read-only access via X-API-KEY.",
+  "category": "integration",
+  "path": "/home/sak/.hermes/skills/integration/digitalcore-api/SKILL.md",
+  "skill_md_chars": 1796,
+  "desc_chars": 161
+ },
+ {
+  "skill": "hermes-pithagoras-bridge",
+  "description": "Connect Hermes to Pithagoras via stdio-to-HTTP MCP bridge.",
+  "category": "integration",
+  "path": "/home/sak/.hermes/skills/integration/hermes-pithagoras-bridge/SKILL.md",
+  "skill_md_chars": 3289,
+  "desc_chars": 58
+ },
+ {
+  "skill": "mcp-bridge",
+  "description": "Bridge stdio MCP servers to HTTP for agent integration.",
+  "category": "integration",
+  "path": "/home/sak/.hermes/skills/integration/mcp-bridge/SKILL.md",
+  "skill_md_chars": 2114,
+  "desc_chars": 55
+ },
+ {
+  "skill": "mcp-deepgram-tts",
+  "description": "Deepgram Luna TTS \u2014 direct REST API (primary) with edge-tts fallback",
+  "category": "integration",
+  "path": "/home/sak/.hermes/skills/integration/mcp-deepgram-tts/SKILL.md",
+  "skill_md_chars": 3162,
+  "desc_chars": 68
+ },
+ {
+  "skill": "wiki-mcp-query-minimal",
+  "description": "Minimal MCP wiki query flow for fast, low-token answers.",
+  "category": "integration",
+  "path": "/home/sak/.hermes/skills/integration/wiki-mcp-query-minimal/SKILL.md",
+  "skill_md_chars": 3961,
+  "desc_chars": 56
+ },
+ {
+  "skill": "mcp-bridge-patterns",
+  "description": "Build MCP bridges for agent-to-agent integration via HTTP.",
+  "category": "integrations",
+  "path": "/home/sak/.hermes/skills/integrations/mcp-bridge-patterns/SKILL.md",
+  "skill_md_chars": 4071,
+  "desc_chars": 58
+ },
+ {
+  "skill": "iso-15189-certification",
+  "description": "",
+  "category": "",
+  "path": "/home/sak/.hermes/skills/iso-15189-certification/SKILL.md",
+  "skill_md_chars": 8453,
+  "desc_chars": 0
+ },
+ {
+  "skill": "lab-tests-biochemistry-vijaya",
+  "description": "Vijaya Diagnostic Centre biochemistry lab test catalog - 515 tests with interpretation, reference ranges, pre-analytical requirements, and limitations. Covers hormones, metabolic panels, urine collections, cardiac markers, drug levels, tumor markers, and toxicology. Use when answering clinical questions about lab test context, reference ranges, sample collection, or test limitations.",
+  "category": "",
+  "path": "/home/sak/.hermes/skills/lab-tests-biochemistry-vijaya/SKILL.md",
+  "skill_md_chars": 8730,
+  "desc_chars": 386
+ },
+ {
+  "skill": "laboratory-sop-auditing",
+  "description": "Use when auditing or rewriting lab SOPs against manuals, kit inserts and RAG.",
+  "category": "",
+  "path": "/home/sak/.hermes/skills/laboratory-sop-auditing/SKILL.md",
+  "skill_md_chars": 13761,
+  "desc_chars": 77
+ },
+ {
+  "skill": "llm-data-prep",
+  "description": "",
+  "category": "",
+  "path": "/home/sak/.hermes/skills/llm-data-prep/SKILL.md",
+  "skill_md_chars": 14595,
+  "desc_chars": 0
+ },
+ {
+  "skill": "composio-mcp",
+  "description": "How to use Composio MCP for Google Drive uploads, Gmail, GitHub, and other app integrations via Hermes Agent's native MCP client. Covers OAuth transport, tool discovery, Drive upload patterns, and common pitfalls.",
+  "category": "mcp",
+  "path": "/home/sak/.hermes/skills/mcp/composio-mcp/SKILL.md",
+  "skill_md_chars": 85929,
+  "desc_chars": 213
+ },
+ {
+  "skill": "hermes-mcp-bridge",
+  "description": "Bridge Hermes MCP to HTTP for external clients.",
+  "category": "mcp",
+  "path": "/home/sak/.hermes/skills/mcp/hermes-mcp-bridge/SKILL.md",
+  "skill_md_chars": 5206,
+  "desc_chars": 47
+ },
+ {
+  "skill": "hostinger-mcp-nav",
+  "description": "Navigate and manage Hostinger services via MCP \u2014 hosting, domains, DNS, VPS, and email marketing (Reach). Use when managing Hostinger accounts, websites, domains, DNS records, VPS containers, or email campaigns.",
+  "category": "mcp",
+  "path": "/home/sak/.hermes/skills/mcp/hostinger-mcp-nav/SKILL.md",
+  "skill_md_chars": 9486,
+  "desc_chars": 211
+ },
+ {
+  "skill": "jcodemunch",
+  "description": "Remote code analysis MCP server (45 tools, 49 indexed repos). Use for searching symbols, call hierarchies, blast radius, dead code, hotspots, refactoring plans across all indexed repositories. Connection via SSE transport over Tailscale.",
+  "category": "mcp",
+  "path": "/home/sak/.hermes/skills/mcp/jcodemunch/SKILL.md",
+  "skill_md_chars": 6931,
+  "desc_chars": 237
+ },
+ {
+  "skill": "mcp-server",
+  "description": "Expose stdio MCP servers as HTTP for Pithagoras/agents.",
+  "category": "mcp",
+  "path": "/home/sak/.hermes/skills/mcp/mcp-server/SKILL.md",
+  "skill_md_chars": 6247,
+  "desc_chars": 55
+ },
+ {
+  "skill": "mcp-server-exposure",
+  "description": "Bridge stdio MCP servers to HTTP/SSE for cross-agent use.",
+  "category": "mcp",
+  "path": "/home/sak/.hermes/skills/mcp/mcp-server-exposure/SKILL.md",
+  "skill_md_chars": 5578,
+  "desc_chars": 57
+ },
+ {
+  "skill": "native-mcp",
+  "description": "MCP client: connect servers, register tools (stdio/HTTP).",
+  "category": "mcp",
+  "path": "/home/sak/.hermes/skills/mcp/native-mcp/SKILL.md",
+  "skill_md_chars": 24671,
+  "desc_chars": 57
+ },
+ {
+  "skill": "sociamonials-hermes",
+  "description": "Sociamonials social publishing via MCP (61 tools).",
+  "category": "mcp",
+  "path": "/home/sak/.hermes/skills/mcp/sociamonials-hermes/SKILL.md",
+  "skill_md_chars": 6567,
+  "desc_chars": 50
+ },
+ {
+  "skill": "audio-transcriber",
+  "description": "Transcribe audio files (OGG, WAV, MP3) to text using ffmpeg + speech_recognition, with emotional analysis and empathetic response framing.",
+  "category": "media",
+  "path": "/home/sak/.hermes/skills/media/audio-transcriber/SKILL.md",
+  "skill_md_chars": 4266,
+  "desc_chars": 138
+ },
+ {
+  "skill": "deepgram-tts",
+  "description": "Generate audio from text using Deepgram Luna voice via Composio pipeline. Covers config, script usage at mcp_deepgram_tts.py, troubleshooting expired keys (reconnect via dashboard.composio.dev), and the 2000-char limit.",
+  "category": "media",
+  "path": "/home/sak/.hermes/skills/media/deepgram-tts/SKILL.md",
+  "skill_md_chars": 2005,
+  "desc_chars": 219
+ },
+ {
+  "skill": "image-prompt-enhancer",
+  "description": "Enhances prompts for FLUX image generation (fal.ai flux/dev, local Phosphene mflux, any FLUX backend). Transforms a bare concept into a structured, high-yield FLUX prompt using the Subject+Action+Style+Context framework with bracketed emphasis, full camera rig, layered composition, and positive-only description. Activates when the user asks to improve, enhance, or write an image-generation prompt for FLUX / static images.",
+  "category": "media",
+  "path": "/home/sak/.hermes/skills/media/image-prompt-enhancer/SKILL.md",
+  "skill_md_chars": 10937,
+  "desc_chars": 425
+ },
+ {
+  "skill": "invidious-api",
+  "description": "Self-hosted Invidious API for YouTube data extraction \u2014 video metadata, search, captions/transcripts, RSS feeds, channel monitoring, playlist extraction. Bypasses YouTube IP blocks on VPS.",
+  "category": "media",
+  "path": "/home/sak/.hermes/skills/media/invidious-api/SKILL.md",
+  "skill_md_chars": 10039,
+  "desc_chars": 188
+ },
+ {
+  "skill": "nsfw-imagegen",
+  "description": "Generate NSFW-capable images via Phosphene's local mflux engine on Sak's MacBook. No cloud safety filters, no API keys required. Uses Tailscale LAN.",
+  "category": "media",
+  "path": "/home/sak/.hermes/skills/media/nsfw-imagegen/SKILL.md",
+  "skill_md_chars": 7236,
+  "desc_chars": 148
+ },
+ {
+  "skill": "phosphene-hermes",
+  "description": "> Comprehensive API guide for Phosphene \u2014 an MLX-accelerated text/image-to-video generation engine running on Sak's MacBook Pro via Tailscale. Use this skill to submit video generation jobs, monitor progress, download outputs, and manage the server remotely from any Hermes session.",
+  "category": "media",
+  "path": "/home/sak/.hermes/skills/media/phosphene-hermes/SKILL.md",
+  "skill_md_chars": 47469,
+  "desc_chars": 282
+ },
+ {
+  "skill": "spotify",
+  "description": "Spotify: play, search, queue, manage playlists and devices.",
+  "category": "media",
+  "path": "/home/sak/.hermes/skills/media/spotify/SKILL.md",
+  "skill_md_chars": 6273,
+  "desc_chars": 59
+ },
+ {
+  "skill": "apple-silicon-llm-inference",
+  "description": "Run local LLMs on Apple Silicon as Hermes agent backends.",
+  "category": "mlops",
+  "path": "/home/sak/.hermes/skills/mlops/apple-silicon-llm-inference/SKILL.md",
+  "skill_md_chars": 10672,
+  "desc_chars": 57
+ },
+ {
+  "skill": "huggingface-hub",
+  "description": "HuggingFace hf CLI: search/download/upload models, datasets.",
+  "category": "mlops",
+  "path": "/home/sak/.hermes/skills/mlops/huggingface-hub/SKILL.md",
+  "skill_md_chars": 3709,
+  "desc_chars": 60
+ },
+ {
+  "skill": "cloud5-tunnel",
+  "description": "Quick integration of any Cloudflare tunnel URL as an OpenAI-compatible model provider. Helps agents recognize, validate, and swap tunnel URLs.",
+  "category": "mlops",
+  "path": "/home/sak/.hermes/skills/mlops/inference/cloud5-tunnel/SKILL.md",
+  "skill_md_chars": 15916,
+  "desc_chars": 142
+ },
+ {
+  "skill": "llama-cpp",
+  "description": "llama.cpp local GGUF inference + HF Hub model discovery.",
+  "category": "mlops",
+  "path": "/home/sak/.hermes/skills/mlops/inference/llama-cpp/SKILL.md",
+  "skill_md_chars": 14214,
+  "desc_chars": 56
+ },
+ {
+  "skill": "obliteratus",
+  "description": "OBLITERATUS: abliterate LLM refusals (diff-in-means).",
+  "category": "mlops",
+  "path": "/home/sak/.hermes/skills/mlops/inference/obliteratus/SKILL.md",
+  "skill_md_chars": 15368,
+  "desc_chars": 53
+ },
+ {
+  "skill": "outlines",
+  "description": "Outlines: structured JSON/regex/Pydantic LLM generation.",
+  "category": "mlops",
+  "path": "/home/sak/.hermes/skills/mlops/inference/outlines/SKILL.md",
+  "skill_md_chars": 15756,
+  "desc_chars": 56
+ },
+ {
+  "skill": "llm-provider-benchmark",
+  "description": "Benchmark and validate free/paid LLM API endpoints (OpenAI-compatible). Use when checking which models are reachable, measuring latency (TTFT/total), or setting up a model-speed comparison across providers. Covers OpenCode Zen, OpenRouter, Gemini direct, HuggingFace Router, NVIDIA NIM, and local LAN tunnels.",
+  "category": "mlops",
+  "path": "/home/sak/.hermes/skills/mlops/llm-provider-benchmark/SKILL.md",
+  "skill_md_chars": 6985,
+  "desc_chars": 309
+ },
+ {
+  "skill": "local-llm-providers",
+  "description": "> Add, benchmark, and troubleshoot local OpenAI-compatible LLM endpoints in Hermes Agent. Covers mlx-serve and similar local servers, config.yaml provider wiring, and reliable speed/quality validation. Use when registering a local LAN model, checking generation quality, or auditing a local inference endpoint.",
+  "category": "mlops",
+  "path": "/home/sak/.hermes/skills/mlops/local-llm-providers/SKILL.md",
+  "skill_md_chars": 18704,
+  "desc_chars": 310
+ },
+ {
+  "skill": "audiocraft-audio-generation",
+  "description": "AudioCraft: MusicGen text-to-music, AudioGen text-to-sound.",
+  "category": "mlops",
+  "path": "/home/sak/.hermes/skills/mlops/models/audiocraft/SKILL.md",
+  "skill_md_chars": 15383,
+  "desc_chars": 59
+ },
+ {
+  "skill": "segment-anything-model",
+  "description": "SAM: zero-shot image segmentation via points, boxes, masks.",
+  "category": "mlops",
+  "path": "/home/sak/.hermes/skills/mlops/models/segment-anything/SKILL.md",
+  "skill_md_chars": 13093,
+  "desc_chars": 59
+ },
+ {
+  "skill": "nvidia-nim",
+  "description": "NVIDIA NIM API \u2014 models, cold-start times, and provider config for Hermes Agent.",
+  "category": "mlops",
+  "path": "/home/sak/.hermes/skills/mlops/nvidia-nim/SKILL.md",
+  "skill_md_chars": 4536,
+  "desc_chars": 80
+ },
+ {
+  "skill": "dspy",
+  "description": "DSPy: declarative LM programs, auto-optimize prompts, RAG.",
+  "category": "mlops",
+  "path": "/home/sak/.hermes/skills/mlops/research/dspy/SKILL.md",
+  "skill_md_chars": 15212,
+  "desc_chars": 58
+ },
+ {
+  "skill": "runpod",
+  "description": "RunPod serverless endpoint \u2192 OpenAI-compatible proxy for Hermes Agent. Covers proxy setup, Hermes provider config, and troubleshooting.",
+  "category": "mlops",
+  "path": "/home/sak/.hermes/skills/mlops/runpod/SKILL.md",
+  "skill_md_chars": 11645,
+  "desc_chars": 135
+ },
+ {
+  "skill": "runpod-imagegen-hermes",
+  "description": "Image generation via RunPod Stable Diffusion (Automatic1111) endpoint. Supports custom prompts, negative prompts, resolution, steps, guidance scale, seed, and batch generation.",
+  "category": "mlops",
+  "path": "/home/sak/.hermes/skills/mlops/runpod-imagegen-hermes/SKILL.md",
+  "skill_md_chars": 2689,
+  "desc_chars": 176
+ },
+ {
+  "skill": "runpod-nsfw-imagegen",
+  "description": "> Generate realistic NSFW/erotic images via RunPod Stable Diffusion endpoint. Covers prompt engineering, parameter tuning, negative prompts, cold-start handling, and the complete submit\u2192poll\u2192save workflow. Trigger when the user asks to generate erotic/adult/NSFW images, or references this skill/RunPod image generation.",
+  "category": "mlops",
+  "path": "/home/sak/.hermes/skills/mlops/runpod-nsfw-imagegen/SKILL.md",
+  "skill_md_chars": 3262,
+  "desc_chars": 320
+ },
+ {
+  "skill": "runpod-serverless",
+  "description": "Call RunPod serverless endpoints for LLM inference. Covers auth, payload schemas, cold-boot retry logic, and avoiding terminal key truncation. Use when an endpoint URL like api.runpod.ai/v2/<id>/run or /runsync is available and you need to submit inference jobs.",
+  "category": "mlops",
+  "path": "/home/sak/.hermes/skills/mlops/runpod-serverless/SKILL.md",
+  "skill_md_chars": 6900,
+  "desc_chars": 262
+ },
+ {
+  "skill": "runpod-videogen-hermes",
+  "description": "End-to-end 3:4 video generation via RunPod serverless endpoint. Covers job submission, polling, base64 video retrieval, and verification.",
+  "category": "mlops",
+  "path": "/home/sak/.hermes/skills/mlops/runpod-videogen-hermes/SKILL.md",
+  "skill_md_chars": 5584,
+  "desc_chars": 137
+ },
+ {
+  "skill": "motion-graphics-cli",
+  "description": "Debug hung motion graphics renders and API key failures.",
+  "category": "",
+  "path": "/home/sak/.hermes/skills/motion-graphics-cli/SKILL.md",
+  "skill_md_chars": 8545,
+  "desc_chars": 56
+ },
+ {
+  "skill": "nlm-skill",
+  "description": "Expert guide for the NotebookLM CLI (`nlm`) and MCP server - interfaces for Google NotebookLM. Use this skill when users want to interact with NotebookLM programmatically, including: creating/managing notebooks, adding sources (URLs, YouTube, text, Google Drive), generating content (podcasts, reports, quizzes, flashcards, mind maps, slides, infographics, videos, data tables), conducting research, chatting with sources, or automating NotebookLM workflows. Triggers on mentions of \\\"nlm\\\", \\\"notebooklm\\\", \\\"notebook lm\\\", \\\"podcast generation\\\", \\\"audio overview\\\", or any NotebookLM-related automation task.",
+  "category": "",
+  "path": "/home/sak/.hermes/skills/nlm-skill/SKILL.md",
+  "skill_md_chars": 36092,
+  "desc_chars": 611
+ },
+ {
+  "skill": "composio-cli",
+  "description": "Help users operate the published Composio CLI to find the right tool, connect accounts, inspect schemas, execute tools, subscribe to trigger events with `composio listen`, script workflows with `composio run`, and call authenticated app APIs with `composio proxy`. Use when the user asks how to do something with `composio`, wants to run a known tool slug, needs to discover a slug with `composio search`, fix a missing connection with `composio link`, inspect tool inputs with `--get-schema` or `--dry-run`, troubleshoot top-level CLI flows, or explicitly needs `composio dev` guidance.",
+  "category": "openclaw-imports",
+  "path": "/home/sak/.hermes/skills/openclaw-imports/composio-cli/SKILL.md",
+  "skill_md_chars": 11736,
+  "desc_chars": 587
+ },
+ {
+  "skill": "nlm-skill",
+  "description": "Expert guide for the NotebookLM CLI (`nlm`) and MCP server - interfaces for Google NotebookLM. Use this skill when users want to interact with NotebookLM programmatically, including: creating/managing notebooks, adding sources (URLs, YouTube, text, Google Drive), generating content (podcasts, reports, quizzes, flashcards, mind maps, slides, infographics, videos, data tables), conducting research, chatting with sources, or automating NotebookLM workflows. Triggers on mentions of \\\"nlm\\\", \\\"notebooklm\\\", \\\"notebook lm\\\", \\\"podcast generation\\\", \\\"audio overview\\\", or any NotebookLM-related automation task.",
+  "category": "openclaw-imports",
+  "path": "/home/sak/.hermes/skills/openclaw-imports/nlm-skill/SKILL.md",
+  "skill_md_chars": 30671,
+  "desc_chars": 611
+ },
+ {
+  "skill": "openrouter-jev",
+  "description": "Use when a task needs a fast typed decision \u2014 routing, classifying, gating, grading, verifying \u2014 instead of generated prose. Calls TypeSafe's Jev decision model via the OpenRouter Decisions API.",
+  "category": "",
+  "path": "/home/sak/.hermes/skills/openrouter-jev/SKILL.md",
+  "skill_md_chars": 4974,
+  "desc_chars": 194
+ },
+ {
+  "skill": "osmomat-030-user-guide",
+  "description": "Operational knowledge base for the Gonotec OSMOMAT 030 cryoscopic osmometer, synthesized from its official User Guide. Use when performing zero/calibration/sample measurements, interpreting SPONT.CRYST / NO CRYST errors, running osmolality QC, loading printer/ribbon, RS-232 data output, or querying instrument specs and limits at the VDC bench.\" argument-hint: \"[topic, framework name, or chapter number \u2014 e.g. 'calibration', 'spont.cryst', 'ch04']",
+  "category": "",
+  "path": "/home/sak/.hermes/skills/osmomat-030-user-guide/SKILL.md",
+  "skill_md_chars": 5220,
+  "desc_chars": 449
+ },
+ {
+  "skill": "osmomat-complete",
+  "description": "Complete Gonotec OSMOMAT 3000 osmometer reference: operation, maintenance, troubleshooting, calibration, safety, and specifications. Use when operating the OSMOMAT 3000 or OSMOMAT 3000 basic, performing calibration, troubleshooting errors, or referencing measurement methods.",
+  "category": "",
+  "path": "/home/sak/.hermes/skills/osmomat-complete/SKILL.md",
+  "skill_md_chars": 4704,
+  "desc_chars": 275
+ },
+ {
+  "skill": "paddleocr-agent",
+  "description": "Use a self-hosted PaddleOCR endpoint for PDF/image OCR with batch retry logic. Covers endpoint config, PDF-to-PNG rendering, exponential backoff, and failure recovery.",
+  "category": "",
+  "path": "/home/sak/.hermes/skills/paddleocr-agent/SKILL.md",
+  "skill_md_chars": 5692,
+  "desc_chars": 167
+ },
+ {
+  "skill": "plain-language-operations",
+  "description": "Use when shortening or simplifying text to Simple English.",
+  "category": "",
+  "path": "/home/sak/.hermes/skills/plain-language-operations/SKILL.md",
+  "skill_md_chars": 5232,
+  "desc_chars": 58
+ },
+ {
+  "skill": "anti-slop-carousel",
+  "description": "Generates high-quality, non-generic, professional social media carousel prompts using the CRISPE framework, Taste-Skill \"Anti-Default\" discipline, and the Layers Design Framework (Conceptual Model -> Surface Words -> Visual Surface).",
+  "category": "productivity",
+  "path": "/home/sak/.hermes/skills/productivity/anti-slop-carousel/SKILL.md",
+  "skill_md_chars": 4596,
+  "desc_chars": 233
+ },
+ {
+  "skill": "box",
+  "description": "Box manages cloud files, sharing, search, and metadata.",
+  "category": "productivity",
+  "path": "/home/sak/.hermes/skills/productivity/box/SKILL.md",
+  "skill_md_chars": 11693,
+  "desc_chars": 55
+ },
+ {
+  "skill": "document-to-action-items",
+  "description": "Extract cited obligations, deadlines, tasks from documents.",
+  "category": "productivity",
+  "path": "/home/sak/.hermes/skills/productivity/document-to-action-items/SKILL.md",
+  "skill_md_chars": 3904,
+  "desc_chars": 59
+ },
+ {
+  "skill": "docx",
+  "description": "Create, read, edit, template, and review Word .docx files.",
+  "category": "productivity",
+  "path": "/home/sak/.hermes/skills/productivity/docx/SKILL.md",
+  "skill_md_chars": 10379,
+  "desc_chars": 58
+ },
+ {
+  "skill": "google-workspace",
+  "description": "Gmail, Calendar, Drive, Docs, Sheets via gws CLI or Python.",
+  "category": "productivity",
+  "path": "/home/sak/.hermes/skills/productivity/google-workspace/SKILL.md",
+  "skill_md_chars": 13689,
+  "desc_chars": 59
+ },
+ {
+  "skill": "meeting-action-items",
+  "description": "Turn meeting notes into cited decisions, owners, tickets.",
+  "category": "productivity",
+  "path": "/home/sak/.hermes/skills/productivity/meeting-action-items/SKILL.md",
+  "skill_md_chars": 3800,
+  "desc_chars": 57
+ },
+ {
+  "skill": "nano-pdf",
+  "description": "Edit text in existing PDFs via natural-language prompts.",
+  "category": "productivity",
+  "path": "/home/sak/.hermes/skills/productivity/nano-pdf/SKILL.md",
+  "skill_md_chars": 1598,
+  "desc_chars": 56
+ },
+ {
+  "skill": "ocr-and-documents",
+  "description": "Extract text from PDFs/scans (pymupdf, marker-pdf).",
+  "category": "productivity",
+  "path": "/home/sak/.hermes/skills/productivity/ocr-and-documents/SKILL.md",
+  "skill_md_chars": 7531,
+  "desc_chars": 51
+ },
+ {
+  "skill": "pdf",
+  "description": "PDF files: create, read, merge, fill, OCR, edit text.",
+  "category": "productivity",
+  "path": "/home/sak/.hermes/skills/productivity/pdf/SKILL.md",
+  "skill_md_chars": 12455,
+  "desc_chars": 53
+ },
+ {
+  "skill": "pdf-to-sheet",
+  "description": "Extract PDF table rows to Google Sheet with verification.",
+  "category": "productivity",
+  "path": "/home/sak/.hermes/skills/productivity/pdf-to-sheet/SKILL.md",
+  "skill_md_chars": 17392,
+  "desc_chars": 57
+ },
+ {
+  "skill": "petdex",
+  "description": "Install and select animated petdex mascots for Hermes.",
+  "category": "productivity",
+  "path": "/home/sak/.hermes/skills/productivity/petdex/SKILL.md",
+  "skill_md_chars": 3509,
+  "desc_chars": 54
+ },
+ {
+  "skill": "product-price-monitor",
+  "description": "Watch product, flight, or listing prices; alert on target.",
+  "category": "productivity",
+  "path": "/home/sak/.hermes/skills/productivity/product-price-monitor/SKILL.md",
+  "skill_md_chars": 4394,
+  "desc_chars": 58
+ },
+ {
+  "skill": "prompt-engineering",
+  "description": "Generates optimized prompts for any AI tool (LLMs, coding agents, image/video generators). Activates when the user explicitly asks to write, fix, improve, or adapt a prompt. Based on Prompt-Master by nidhinjs (7.9k+ stars).",
+  "category": "productivity",
+  "path": "/home/sak/.hermes/skills/productivity/prompt-engineering/SKILL.md",
+  "skill_md_chars": 9088,
+  "desc_chars": 223
+ },
+ {
+  "skill": "session-librarian",
+  "description": "Organize sessions by prompt: find, rename, archive, prune.",
+  "category": "productivity",
+  "path": "/home/sak/.hermes/skills/productivity/session-librarian/SKILL.md",
+  "skill_md_chars": 4803,
+  "desc_chars": 58
+ },
+ {
+  "skill": "simple-english",
+  "description": "| Write or rewrite technical text with the rules of ASD-STE100 Simplified Technical English so it is clear, unambiguous, and free of AI slop. Use for documentation, READMEs, runbooks, procedures, error messages, release notes, incident reports, and API guides. Also use when the user says \"STE\", \"Simplified Technical English\", \"ASD-STE100\", \"de-slop\", \"make this readable\", \"write for non-native readers\", or asks for docs that translate well. Enforces the standard's 53 rules: 20/25-word sentence limits, one word one meaning, simple tenses, active voice, condition before command.",
+  "category": "productivity",
+  "path": "/home/sak/.hermes/skills/productivity/simple-english/SKILL.md",
+  "skill_md_chars": 18407,
+  "desc_chars": 583
+ },
+ {
+  "skill": "technical-paper-to-audio",
+  "description": ">- Convert technical research papers into simplified audio explanations. Combines deep technical analysis with educational simplification and produces audio content for learning. Handles TTS service failures and provides fallback delivery methods.",
+  "category": "productivity",
+  "path": "/home/sak/.hermes/skills/productivity/technical/technical-paper-to-audio/SKILL.md",
+  "skill_md_chars": 8966,
+  "desc_chars": 247
+ },
+ {
+  "skill": "video-prompt-enhancer",
+  "description": "Enhances prompts for AI video generation (LTX, Runway, Kling, Sora). Transforms bare-minimum descriptions into cinematic, professional-quality video prompts. Activates when user asks to improve, enhance, or write a video generation prompt.",
+  "category": "productivity",
+  "path": "/home/sak/.hermes/skills/productivity/video-prompt-enhancer/SKILL.md",
+  "skill_md_chars": 16867,
+  "desc_chars": 239
+ },
+ {
+  "skill": "voice-mode",
+  "description": "Auto-reply with TTS voice instead of text \u2014 toggle with \"TTS on\" / \"TTS off",
+  "category": "productivity",
+  "path": "/home/sak/.hermes/skills/productivity/voice-mode/SKILL.md",
+  "skill_md_chars": 2762,
+  "desc_chars": 75
+ },
+ {
+  "skill": "weekly-review-planning",
+  "description": "Weekly reset: commitments, stalled work, next-week plan.",
+  "category": "productivity",
+  "path": "/home/sak/.hermes/skills/productivity/weekly-review-planning/SKILL.md",
+  "skill_md_chars": 3973,
+  "desc_chars": 56
+ },
+ {
+  "skill": "xlsx",
+  "description": "Create, read, edit Excel .xlsx workbooks and CSVs.",
+  "category": "productivity",
+  "path": "/home/sak/.hermes/skills/productivity/xlsx/SKILL.md",
+  "skill_md_chars": 9649,
+  "desc_chars": 50
+ },
+ {
+  "skill": "pw40-pw41-plate-washer",
+  "description": "> Complete reference skill for the Sanofi Diagnostics Pasteur / Bio-Rad PW40 & PW41 microplate plate washers (manual code 87050, Rev 03/00, July 1998). Covers wash protocol programming (Kits, Methods, Plates), all 75-kit / 10-plate parameter tree, hardware specs, daily maintenance, disinfection, troubleshooting error codes (ERR:21\u2013ERR:33), and pre-built kit sheets for PW40 (SDP013) and PW41 (SDP014). Use when the user asks about: - PW40 or PW41 plate washer operation, setup, or troubleshooting - Programming wash kits (KIT), methods, plates on these washers - Parameter definitions: ASP.TIME, VOLUME, FLOW, OVERFLOW, CROSW.ASP, B.W.VERT.POS, BOT.DOWNW.SPEED, SHAKING, etc. - Error codes ERR:21\u2013ERR:33, RAM initialization, disinfection procedure - Hydraulic circuits, manifold types (8ch / 2\u00d78ch / 3\u00d78ch / 2\u00d712ch), liquid input assignment - Daily maintenance, cleaning manifold, disinfection with bleach-free solutions, storage conditions",
+  "category": "",
+  "path": "/home/sak/.hermes/skills/pw40-pw41-plate-washer/SKILL.md",
+  "skill_md_chars": 29652,
+  "desc_chars": 942
+ },
+ {
+  "skill": "flask-pitfalls",
+  "description": "Flask gotchas and reusable patterns. Use when deploying Flask apps, debugging template resolution failures (empty/gone templates, wrong folder loaded), building media gallery UIs with reel/grid/list views, or when a Flask app started from a different cwd loads wrong templates.",
+  "category": "python",
+  "path": "/home/sak/.hermes/skills/python/flask-pitfalls/SKILL.md",
+  "skill_md_chars": 3481,
+  "desc_chars": 277
+ },
+ {
+  "skill": "remisol-advance",
+  "description": "> Complete reference skill for Remisol Advance Data Manager v1.8 (Normand Info, UG-ADV-SK-18, May 2014) \u2014 lab/sample management software for Beckman Coulter instruments (128 connections), automation lines, LIS/Host integration, QC (Westgard/Rilibak), audit trail, tracking modules. Covers all 11 sections, instrument types, connection modes, result flags, error codes, keyboard shortcuts, advanced rules, and v1.8 new features. Source: Slovak user manual UG-ADV-SK-18 extracted via text layer (477K chars) + PaddleOCR (8 pages). All original Slovak UI labels preserved in data; skill outputs and SKILL.md in English.",
+  "category": "",
+  "path": "/home/sak/.hermes/skills/remisol-advance/SKILL.md",
+  "skill_md_chars": 40031,
+  "desc_chars": 616
+ },
+ {
+  "skill": "blogwatcher",
+  "description": "Monitor blogs and RSS/Atom feeds via blogwatcher-cli tool.",
+  "category": "research",
+  "path": "/home/sak/.hermes/skills/research/blogwatcher/SKILL.md",
+  "skill_md_chars": 5111,
+  "desc_chars": 58
+ },
+ {
+  "skill": "competitor-news-monitor",
+  "description": "Watch named companies for material news; cited digests.",
+  "category": "research",
+  "path": "/home/sak/.hermes/skills/research/competitor-news-monitor/SKILL.md",
+  "skill_md_chars": 4611,
+  "desc_chars": 55
+ },
+ {
+  "skill": "context7",
+  "description": "> Up-to-date library/framework/API docs for LLM answers. Use when the user asks about libraries, SDKs, APIs, setup, config, version differences, or any code question where training data may be stale. Covers React, Next.js, Supabase, Prisma, Express, Tailwind, Flutter, Python, Rust, Go, and more. Patterns: search \u2192 resolve \u2192 fetch \u2192 answer.",
+  "category": "research",
+  "path": "/home/sak/.hermes/skills/research/context7/SKILL.md",
+  "skill_md_chars": 2257,
+  "desc_chars": 341
+ },
+ {
+  "skill": "grounded-citations",
+  "description": "Ground answers and documents in cited, verifiable sources.",
+  "category": "research",
+  "path": "/home/sak/.hermes/skills/research/grounded-citations/SKILL.md",
+  "skill_md_chars": 12586,
+  "desc_chars": 58
+ },
+ {
+  "skill": "movie-research",
+  "description": ">- Deep multi-source research on any movie or TV show. Produces a comprehensive Google Doc covering: plot, story behind the film, cast/characters, themes, production history, critical reception, and viewing recommendations. Adapted from the multi-source-research pipeline for entertainment content.",
+  "category": "research",
+  "path": "/home/sak/.hermes/skills/research/movie-research/SKILL.md",
+  "skill_md_chars": 4895,
+  "desc_chars": 298
+ },
+ {
+  "skill": "multi-source-research",
+  "description": ">- Multi-pipeline biomedical research: take a topic \u2192 query sources in parallel \u2192 compile structured report + optional audio briefing. Three pipeline variants: (A) 7 free APIs (Wikipedia, PubMed, Reactome, UniProt, OpenTargets, ClinicalTrials.gov, DailyMed), (B) Tavily + Composio scholar/web + mega-RAG for clinical/webinar prep, (C) hybrid of both. Outputs: Google Doc, markdown, or MP3 audio briefing.",
+  "category": "research",
+  "path": "/home/sak/.hermes/skills/research/multi-source-research/SKILL.md",
+  "skill_md_chars": 16459,
+  "desc_chars": 404
+ },
+ {
+  "skill": "pubmed-daily-digest",
+  "description": "Automated PubMed daily digest pipeline \u2014 fetches, parses, and distributes recent articles from three specialties (Clinical Biochemistry, Clinical Medicine, Molecular Medicine) via Google Doc, Google Sheet, and email. Integrates with short-form-creator for social media content generation.",
+  "category": "research",
+  "path": "/home/sak/.hermes/skills/research/pubmed-daily-digest/SKILL.md",
+  "skill_md_chars": 44003,
+  "desc_chars": 288
+ },
+ {
+  "skill": "research-paper-writing",
+  "description": "Write ML papers for NeurIPS/ICML/ICLR: design\u2192submit.",
+  "category": "research",
+  "path": "/home/sak/.hermes/skills/research/research-paper-writing/SKILL.md",
+  "skill_md_chars": 71328,
+  "desc_chars": 53
+ },
+ {
+  "skill": "tavily",
+  "description": "Tavily web search API \u2014 search, extract, map, crawl, research, and MCP integration with cost-aware usage and advanced patterns.",
+  "category": "research",
+  "path": "/home/sak/.hermes/skills/research/tavily/SKILL.md",
+  "skill_md_chars": 14710,
+  "desc_chars": 127
+ },
+ {
+  "skill": "wiki-pubmed-lookup",
+  "description": ">- Rapid structured lookup from Wikipedia (REST API) and PubMed (E-utilities) using curl \u2014 no API keys, no Firecrawl, no paywalls. Returns clinical thresholds, reference ranges, recent literature with PMIDs and DOIs. Designed for clinical/biochemistry quick-reference lookups when web_search/web_extract are unavailable.",
+  "category": "research",
+  "path": "/home/sak/.hermes/skills/research/wiki-pubmed-lookup/SKILL.md",
+  "skill_md_chars": 13529,
+  "desc_chars": 320
+ },
+ {
+  "skill": "safe-vps-audit",
+  "description": "Use when auditing or cleaning up a remote VPS.",
+  "category": "",
+  "path": "/home/sak/.hermes/skills/safe-vps-audit/SKILL.md",
+  "skill_md_chars": 6722,
+  "desc_chars": 46
+ },
+ {
+  "skill": "skill-accuracy-verification",
+  "description": "> Verify OCR-derived skills are accurate before delivery.",
+  "category": "",
+  "path": "/home/sak/.hermes/skills/skill-accuracy-verification/SKILL.md",
+  "skill_md_chars": 14040,
+  "desc_chars": 57
+ },
+ {
+  "skill": "agent-skill-repo",
+  "description": "Build project repos with a polished README + AGENTS.md as the canonical AI-agent skill file. Use when creating, formalizing, or releasing a project repo, when the user says 'write an AGENTS.md', 'create a skill for this project', 'make this project agent-readable', or 'set up a single source of truth for this repo'.",
+  "category": "software-development",
+  "path": "/home/sak/.hermes/skills/software-development/agent-skill-repo/SKILL.md",
+  "skill_md_chars": 27220,
+  "desc_chars": 317
+ },
+ {
+  "skill": "browser-integration-testing",
+  "description": "> Validate in-page JavaScript libraries against live web targets. Covers CSP probing, script injection, constructor verification, init patterns, and functional execution. Use for any test where a JS library is loaded into a real browser page (browser agents, analytics SDKs, GUI automation, etc.).",
+  "category": "software-development",
+  "path": "/home/sak/.hermes/skills/software-development/browser-integration-testing/SKILL.md",
+  "skill_md_chars": 4335,
+  "desc_chars": 297
+ },
+ {
+  "skill": "caveman",
+  "description": "> Ultra-compressed communication mode. Cuts token usage ~65% by speaking like caveman while keeping full technical accuracy. Invoke with \"caveman mode\", `/caveman`, \"talk like caveman\", \"be brief\". Supported intensities: lite, full (default), ultra, wenyan. Disable with \"normal mode\" or \"stop caveman\".",
+  "category": "software-development",
+  "path": "/home/sak/.hermes/skills/software-development/caveman/SKILL.md",
+  "skill_md_chars": 4027,
+  "desc_chars": 303
+ },
+ {
+  "skill": "cloud-catalog-server",
+  "description": "Build lightweight Python catalog servers that cache cloud storage APIs into SQLite FTS5. Use when building a searchable local catalog for Koofr, Google Drive, 115, or any cloud storage with a file-tree REST API. Covers architecture, SQLite caching, Flask web UI, and Termux deployment.",
+  "category": "software-development",
+  "path": "/home/sak/.hermes/skills/software-development/cloud-catalog-server/SKILL.md",
+  "skill_md_chars": 49326,
+  "desc_chars": 285
+ },
+ {
+  "skill": "debugging-hermes-tui-commands",
+  "description": "Debug Hermes TUI slash commands: Python, gateway, Ink UI.",
+  "category": "software-development",
+  "path": "/home/sak/.hermes/skills/software-development/debugging-hermes-tui-commands/SKILL.md",
+  "skill_md_chars": 7886,
+  "desc_chars": 57
+ },
+ {
+  "skill": "github",
+  "description": "GitHub via gh CLI: PRs, issues, reviews, repos, auth.",
+  "category": "software-development",
+  "path": "/home/sak/.hermes/skills/software-development/github/SKILL.md",
+  "skill_md_chars": 2440,
+  "desc_chars": 53
+ },
+ {
+  "skill": "hermes-s6-container-supervision",
+  "description": "Modify, debug, or extend the s6-overlay supervision tree inside the Hermes Agent Docker image \u2014 adding new services, debugging profile gateways, understanding the Architecture B main-program pattern.",
+  "category": "software-development",
+  "path": "/home/sak/.hermes/skills/software-development/hermes-s6-container-supervision/SKILL.md",
+  "skill_md_chars": 11200,
+  "desc_chars": 199
+ },
+ {
+  "skill": "implementation-audit",
+  "description": "Systematically verify documented features, specs, or backlog items against actual code implementation \u2014 producing a structured gap analysis with evidence.",
+  "category": "software-development",
+  "path": "/home/sak/.hermes/skills/software-development/implementation-audit/SKILL.md",
+  "skill_md_chars": 9324,
+  "desc_chars": 154
+ },
+ {
+  "skill": "inspecting-hermes-desktop-dom",
+  "description": "Read the live Hermes desktop DOM/CSS over CDP.",
+  "category": "software-development",
+  "path": "/home/sak/.hermes/skills/software-development/inspecting-hermes-desktop-dom/SKILL.md",
+  "skill_md_chars": 6228,
+  "desc_chars": 46
+ },
+ {
+  "skill": "layers-audit",
+  "description": "7-layer UX framework for systematic design auditing. Check foundation before building upward. Detects structural issues: shapeshifter, masked, broken, isolated objects.",
+  "category": "software-development",
+  "path": "/home/sak/.hermes/skills/software-development/layers-audit/SKILL.md",
+  "skill_md_chars": 4817,
+  "desc_chars": 168
+ },
+ {
+  "skill": "lean-python-tools",
+  "description": "Build zero-dependency Python tools for Hermes: stdlib-only scraping, API integration patterns, urllib pitfalls, and Hermes skill packaging. Use when creating lightweight scripts, scrapers, or API clients that need no pip installs.",
+  "category": "software-development",
+  "path": "/home/sak/.hermes/skills/software-development/lean-python-tools/SKILL.md",
+  "skill_md_chars": 5742,
+  "desc_chars": 230
+ },
+ {
+  "skill": "mcp-integration",
+  "description": "Build, test, and register MCP stdio/stderr servers for Hermes Agent. Covers config.yaml registration (protected file \u2014 use sed), startup handshake testing, ReAct agent loop implementation inside an MCP tool, Cloudflare detection and graceful fallback to Hermes native browser tools. Use when the user asks to integrate an external tool via MCP, wrap a CLI as an MCP server, or build browser automation for Hermes.",
+  "category": "software-development",
+  "path": "/home/sak/.hermes/skills/software-development/mcp-integration/SKILL.md",
+  "skill_md_chars": 4283,
+  "desc_chars": 413
+ },
+ {
+  "skill": "plan",
+  "description": "Write a markdown plan to .hermes/plans/; no execution.",
+  "category": "software-development",
+  "path": "/home/sak/.hermes/skills/software-development/plan/SKILL.md",
+  "skill_md_chars": 8883,
+  "desc_chars": 54
+ },
+ {
+  "skill": "skill-extension",
+  "description": "Use when the user asks to add a feature, flag, capability, or upgrade to an EXISTING skill (or a repo-backed skill like leverage-skill). Encodes the ENHANCE-don't-fork decision rule, the 4-phase extension workflow (scope \u2192 batch \u2192 atomic rewrite \u2192 sync), the backward-compat contract, and the documentation bump. Triggered by \"extend X skill\", \"add Y to Z skill\", \"enhance the W skill\", \"upgrade skill Z\", or any time you're about to write_file into a skill that already exists. Pairs with source-to-skill-extraction (parallel \"create new from a source doc\" workflow) and agent-skill-repo (project repos built around an AGENTS.md).",
+  "category": "software-development",
+  "path": "/home/sak/.hermes/skills/software-development/skill-extension/SKILL.md",
+  "skill_md_chars": 11658,
+  "desc_chars": 631
+ },
+ {
+  "skill": "subagent-driven-development",
+  "description": "Execute plans via delegate_task subagents (2-stage review).",
+  "category": "software-development",
+  "path": "/home/sak/.hermes/skills/software-development/subagent-driven-development/SKILL.md",
+  "skill_md_chars": 10705,
+  "desc_chars": 59
+ },
+ {
+  "skill": "systematic-debugging",
+  "description": "4-phase root cause debugging: understand bugs before fixing.",
+  "category": "software-development",
+  "path": "/home/sak/.hermes/skills/software-development/systematic-debugging/SKILL.md",
+  "skill_md_chars": 12461,
+  "desc_chars": 60
+ },
+ {
+  "skill": "writing-plans",
+  "description": "Write implementation plans: bite-sized tasks, paths, code.",
+  "category": "software-development",
+  "path": "/home/sak/.hermes/skills/software-development/writing-plans/SKILL.md",
+  "skill_md_chars": 9317,
+  "desc_chars": 58
+ },
+ {
+  "skill": "source-to-skill-extraction",
+  "description": "Use when turning a large source doc into an accurate skill.",
+  "category": "",
+  "path": "/home/sak/.hermes/skills/source-to-skill-extraction/SKILL.md",
+  "skill_md_chars": 11388,
+  "desc_chars": 59
+ },
+ {
+  "skill": "stock-api-compositing",
+  "description": "Add stock photo/video backgrounds to rendered video.",
+  "category": "",
+  "path": "/home/sak/.hermes/skills/stock-api-compositing/SKILL.md",
+  "skill_md_chars": 9225,
+  "desc_chars": 52
+ },
+ {
+  "skill": "trop-t-stat",
+  "description": "> Roche Elecsys Troponin T STAT (4th gen, 04660307) kit insert for cobas e 411/601/602 and Elecsys 2010. Covers intended use, specimen requirements, reagent handling, storage/stability, interferences, cross-reactivities, analytical performance, and reference ranges. Use for lab SOP authoring, assay validation, interference checks, and clinical interpretation context (ACS, MI, NSTEMI, risk stratification). argument-hint: \"<query-or-section>",
+  "category": "",
+  "path": "/home/sak/.hermes/skills/trop-t-stat/SKILL.md",
+  "skill_md_chars": 8512,
+  "desc_chars": 443
+ },
+ {
+  "skill": "vdc-bio-qa",
+  "description": "Knowledge base from VDC SOP VDC/BIO/167 'Quality Assurance in Clinical Biochemistry' (Vijaya Diagnostic Centre, v1.0, amended 06.04.2026). Use when auditing biochemistry SOPs, running/reviewing IQC with Westgard multi-rules, setting QC target ranges on new control lots, evaluating EQA/PT z-scores, computing measurement uncertainty (%CV), inter-laboratory comparison, or re-analysis of released results after QC failure.",
+  "category": "",
+  "path": "/home/sak/.hermes/skills/vdc-bio-qa/SKILL.md",
+  "skill_md_chars": 6828,
+  "desc_chars": 421
+ },
+ {
+  "skill": "blocked-page-recovery",
+  "description": "Use when a fetch fails: 403/429, paywall, WAF, bot wall.",
+  "category": "web",
+  "path": "/home/sak/.hermes/skills/web/blocked-page-recovery/SKILL.md",
+  "skill_md_chars": 5139,
+  "desc_chars": 56
+ },
+ {
+  "skill": "embedded-js-gallery",
+  "description": "> Single-file Flask + inline-JS media browsers. Covers Jinja2 escaping pitfalls, thumbnail serving, view-mode switching, virtual reel view, video autoplay, lightbox lazy-loading, and touch/wheel/keyboard navigation. Use when building or debugging a self-contained media catalog UI served from one HTML template. Not for multi-file SPA frameworks (React/Vue).",
+  "category": "web",
+  "path": "/home/sak/.hermes/skills/web/embedded-js-gallery/SKILL.md",
+  "skill_md_chars": 5119,
+  "desc_chars": 358
+ },
+ {
+  "skill": "exa-web-search",
+  "description": ">- Free semantic web search and code search via Exa AI (mcporter MCP), plus free web page reading via Jina Reader. Zero API key needed, no rate limits beyond Exa's generous free tier. Replaces or complements Tavily for routine searches. From Agent Reach scaffolding (agent-reach).",
+  "category": "web",
+  "path": "/home/sak/.hermes/skills/web/exa-web-search/SKILL.md",
+  "skill_md_chars": 2215,
+  "desc_chars": 280
+ },
+ {
+  "skill": "multi-community-research",
+  "description": "> Subreddit-agnostic Reddit research skill for trend and insight discovery across multiple communities. Fetches fresh posts, deduplicates across subreddits, ranks by signal, and outputs actionable insights. Depends on an active Composio Reddit connection.",
+  "category": "web",
+  "path": "/home/sak/.hermes/skills/web/multi-community-research/SKILL.md",
+  "skill_md_chars": 6417,
+  "desc_chars": 255
+ },
+ {
+  "skill": "multi-subreddit-research-workflow",
+  "description": "> End-to-end Reddit research workflow: fetch top posts of the day across multiple subreddits, rank them, write a point-wise brief to Google Docs, share it with a recipient, and email the link. Depends on an active Composio Reddit + Google Workspace connection.",
+  "category": "web",
+  "path": "/home/sak/.hermes/skills/web/multi-subreddit-research-workflow/SKILL.md",
+  "skill_md_chars": 14302,
+  "desc_chars": 260
+ },
+ {
+  "skill": "reddit-access",
+  "description": ">- Unified Reddit access skill covering all methods: Composio (primary), Agent Reach/rdt-cli (fallback), and inline Python (last resort). Use whenever accessing Reddit data \u2014 posts, comments, media, or search results. Covers rate-limit handling, authentication strategies, and fallback routing.",
+  "category": "web",
+  "path": "/home/sak/.hermes/skills/web/reddit-access/SKILL.md",
+  "skill_md_chars": 11741,
+  "desc_chars": 294
+ },
+ {
+  "skill": "reddit-extraction",
+  "description": ">- Extract Reddit gallery posts, comments, and linked external resources (Pastebin, Google Drive) without direct Reddit API access. Handles Cloudflare-blocked posts via alternative proxied endpoints and linked source analysis.",
+  "category": "web",
+  "path": "/home/sak/.hermes/skills/web/reddit-extraction/SKILL.md",
+  "skill_md_chars": 8209,
+  "desc_chars": 226
+ },
+ {
+  "skill": "reddit-headless-fetch",
+  "description": "Fetch Reddit headless via rdt CLI (cron/VPS, no OAuth).",
+  "category": "web",
+  "path": "/home/sak/.hermes/skills/web/reddit-headless-fetch/SKILL.md",
+  "skill_md_chars": 5805,
+  "desc_chars": 55
+ },
+ {
+  "skill": "reddit-pull",
+  "description": "> Pull the latest media from any subreddit in a subreddit-agnostic way. Returns newest image/video post URL, title, permalink, and saves the media to disk if it is directly downloadable (i.redd.it or direct URL). Depends on an active Composio Reddit connection.",
+  "category": "web",
+  "path": "/home/sak/.hermes/skills/web/reddit-pull/SKILL.md",
+  "skill_md_chars": 4270,
+  "desc_chars": 261
+ },
+ {
+  "skill": "inpage-browser-automation",
+  "description": "> Inject JavaScript agents into live web pages for GUI automation, content extraction, and LLM-driven task execution without extensions or server-side tools. Covers in-page script injection, IIFE bundle lifecycle, OpenAI-compatible LLM config (OpenRouter, Ollama, DashScope), CSP checks, and site-specific patterns.",
+  "category": "web-automation",
+  "path": "/home/sak/.hermes/skills/web-automation/inpage-browser-automation/SKILL.md",
+  "skill_md_chars": 3415,
+  "desc_chars": 315
+ }
+]

@@ -137,7 +137,7 @@ jev-hermes/
 │   │   ├── jev_client.py      same API, /v1/systemone transport                        [mirrored]
 │   │   └── decisions/         the same 4 question sets                                [mirrored]
 │   └── docs/                  design + recipes shared; api.md is Zen-specific         [mirrored]
-├── examples/                  4 runnable scripts, one per pattern
+├── examples/                  5 runnable scripts, one per pattern
 ├── tests/
 │   ├── test_client.py             54 offline tests — OpenRouter, no key needed
 │   ├── test_live_smoke.py         7 real API tests, skipped unless JEV_LIVE=1

@@ -28,9 +28,11 @@ for d in "$OR_SKILL" "$OC_SKILL"; do
 done
 
 # Relative paths recorded in MANIFEST.sha256, per provider.
-OR_MIRRORED=(scripts/jev_client.py docs/design.md docs/api.md docs/recipes.md)
+OR_MIRRORED=(scripts/jev_client.py docs/design.md docs/api.md docs/recipes.md
+             docs/comparison.md)
 OC_MIRRORED=(opencode/scripts/jev_client.py opencode/docs/design.md
-             opencode/docs/api.md opencode/docs/recipes.md)
+             opencode/docs/api.md opencode/docs/recipes.md
+             opencode/docs/comparison.md)
 
 if [ "${1:-}" = "--check" ]; then
   cd "$REPO"
@@ -54,6 +56,7 @@ mirror() {  # mirror <skill> <outdir-for-scripts> <outdir-for-docs>
   cp "$skill"/references/design.md  "$ddir/design.md"
   cp "$skill"/references/api.md     "$ddir/api.md"
   cp "$skill"/references/recipes.md "$ddir/recipes.md"
+  cp "$skill"/references/comparison.md "$ddir/comparison.md"
 }
 
 mirror "$OR_SKILL" scripts   docs

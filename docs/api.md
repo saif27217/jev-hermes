@@ -198,6 +198,9 @@ elsewhere. This is the defence against injected instructions arriving inside the
 }
 ```
 
+`criteria` is **required** for `score` and `choice` — an omitted array is rejected upstream,
+not defaulted.
+
 **Response**:
 ```json
 {

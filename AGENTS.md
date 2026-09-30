@@ -319,6 +319,11 @@ do not rewrite the questions to chase an outcome.
 - `score` returns a probability-weighted position (`1.99`), not an integer index. Compare with
   `>=`; never `==`.
 - `noul` answers carry **no** `confidence` field. Threshold the `noul` value itself.
+- **`criteria` is required for both `score` and `choice`.** A `score` without its `criteria`
+  array makes the upstream return **422 `Upstream request failed: Endpoint is unavailable.`**
+  — which reads as an outage and is not one. Measured on Zen: 5/5 attempts failed for a
+  `criteria`-less `score` while `noul` and `choice` in the same second returned 200. If a
+  single question type 422s while others work, check its `criteria` first.
 
 ### 8.9 The endpoint is on an alpha path
 

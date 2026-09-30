@@ -119,6 +119,11 @@ Response:
 
 `score` is a **float** position (probability-weighted), so compare with `>=`, never `==`.
 
+**`criteria` is REQUIRED for `score`** (and for `choice`). Omitting it is not a warning —
+the upstream returns **422 `Endpoint is unavailable`**, which reads like an outage and is
+not one. Measured: 5/5 attempts failed with a `criteria`-less `score`, while `noul` and
+`choice` in the same second succeeded.
+
 ## Response format
 
 ```json
@@ -142,7 +147,7 @@ endpoint. Parse it with `float(body["cost"])`.
 | 401 | `{"error":{"type":"AuthError","message":"Invalid API key."}}` | bad or placeholder bearer | drop the header (free model) |
 | 401 | `{"error":{"type":"ModelError","message":"Model jev-9.9 is not supported"}}` | bad model id | use `jev-1.13-free` |
 | 402 | `Insufficient account funds` | paid model, no credits | use the free model |
-| 422 | `Upstream request failed: Endpoint is unavailable.` | empty `questions`, or missing `state` | both fields are required |
+| 422 | `Upstream request failed: Endpoint is unavailable.` | empty `questions`; missing `state`; **or a `score` with no `criteria`** | give `score` its `criteria` array — this is the common one |
 | 403 | `FreeTierError: … can only be used from within OpenCode` | *other* free models, not jev | jev is not affected; others are client-gated |
 
 A 401 is worth one keyless retry, since a stale env key must not break a free call. 400/401/422

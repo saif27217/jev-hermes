@@ -1,0 +1,62 @@
+{
+  "specs_sufficient": {
+    "type": "noul",
+    "instructions": "Do the given details alone determine real-world performance for `goal`, with no test, review or measurement needed?"
+  },
+  "headline_specs_equal": {
+    "type": "noul",
+    "instructions": "Are `option_a` and `option_b` equal on every headline specification that matters for `goal`?"
+  },
+  "b_spec_edge": {
+    "type": "noul",
+    "instructions": "On paper, does `option_b` have the stronger stated specification for `goal`?"
+  },
+  "a_expansion_path": {
+    "type": "noul",
+    "instructions": "Does `option_a` offer a documented upgrade, expansion or add-on path that `option_b` lacks?"
+  },
+  "goal_needs_scaling": {
+    "type": "noul",
+    "instructions": "Does `goal` usually need to scale beyond what a single unit provides?"
+  },
+  "winner_single": {
+    "type": "choice",
+    "instructions": "Used alone as ONE unit, which is better at `goal`?",
+    "criteria": {
+      "a_better": "`option_a` is better alone",
+      "b_better": "`option_b` is better alone",
+      "tie": "No material difference"
+    }
+  },
+  "winner_purchase": {
+    "type": "choice",
+    "instructions": "Which is the better BUY overall for `goal`?",
+    "criteria": {
+      "a_better": "`option_a` is the better buy",
+      "b_better": "`option_b` is the better buy",
+      "tie": "No material difference"
+    }
+  },
+  "a_score": {
+    "type": "score",
+    "instructions": "`option_a`: suitability for `goal`",
+    "criteria": [
+      "poor",
+      "weak",
+      "fair",
+      "good",
+      "excellent"
+    ]
+  },
+  "b_score": {
+    "type": "score",
+    "instructions": "`option_b`: suitability for `goal`",
+    "criteria": [
+      "poor",
+      "weak",
+      "fair",
+      "good",
+      "excellent"
+    ]
+  }
+}

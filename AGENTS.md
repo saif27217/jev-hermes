@@ -21,7 +21,8 @@ in ~0.4s (~1.0s on Zen), and hands back numbers with a `confidence` field. That 
 to guard *every* action rather than a sample of them.
 
 **Provider choice, in one line:** develop and volume-run on Zen (free, keyless); use
-OpenRouter when you need the lower latency or want a funded, less volatile free tier.
+OpenRouter only when ~0.5s of latency matters. Accuracy is identical — same model, same
+numbers (see §5.2).
 
 **What makes it different.** No dependencies. No SDK. No parsing of free text. The client is
 one file you can copy anywhere, and the repo ships the *method* for designing new decisions,
@@ -53,7 +54,7 @@ First lookup for common requests.
 | "Why did the gate say review?" | §8.7 — thresholds, not the model. `approve_at` / `block_at` |
 | "Jev 500s on Zen" | §8.14 — you posted to `/chat/completions`. It must be `/zen/v1/systemone` |
 | "Zen 401s on the free model" | §8.14 — a placeholder/stale key was sent. Keyless is the default |
-| "Which provider should I use?" | §1 and §8.14 — Zen is free and keyless; OpenRouter is ~0.4s |
+| "Which provider should I use?" | §1, §5.2, §8.14 — Zen is free/keyless, OpenRouter ~0.4s vs ~1.0s; accuracy identical |
 | "Add a new decision set" (Zen copy) | Same file as OpenRouter; `./sync.sh` mirrors it to both (§8.1) |
 
 ---
@@ -155,9 +156,16 @@ PAID_MODEL      = "jev-1.13"               # $0.042/1M input, needs a funded wor
 Pin the version on either provider. A rolling alias changes behaviour under you, and since
 thresholds are tuned against a model's calibration, a silent upgrade invalidates them.
 
-**The two models are not calibrated identically.** The free Zen model is markedly more
-*decisive*: five identical calls returned 0.97 five times, where OpenRouter's jev hedges
-around the same value. Re-tune thresholds per provider rather than copying them across.
+**The two providers return identical numbers.** Measured head-to-head on the same states:
+both scored 8/8 on the easy cases and the same 2/4 on the hard ones, with values matching to
+2 dp, and five identical calls returning `0.97` five times on **each** (`jev-1.13-free` on Zen
+vs `typesafe/jev-1.13-20260917` on OpenRouter — i.e. the same model behind both doors). Token
+counts matched exactly too (365 in / 67 out).
+
+An earlier revision of this section claimed Zen was "markedly more decisive" and that
+OpenRouter "hedges". **That was wrong** — it compared one provider's repeat-runs against no
+baseline. Do not carry the claim forward. Treat the free model as the paid one minus the bill
+and ~0.5s of latency, and still re-verify a threshold before reusing it across providers.
 
 ### 5.3 Running the tests without a system pytest
 

@@ -1,18 +1,24 @@
 # jev-hermes
 
-**Fast, cheap, typed decisions for AI agents and scripts — via TypeSafe's Jev model on OpenRouter.**
+**Fast, cheap, typed decisions for AI agents and scripts — TypeSafe's Jev model, on two providers.**
 
 Jev is a *decision model*, not a chat model. You give it a situation and a set of narrow
 questions; it returns calibrated probabilities instead of prose. Code owns the workflow;
 Jev owns the judgment.
 
-One request costs about **$0.00002** and returns in about **0.4 seconds**. That is roughly
-1/250th the cost of one frontier-model call, which makes it practical to ask a model
-"is this actually safe to do?" before every action.
+| Provider | Cost / request | Latency | Auth | Endpoint |
+|---|---|---|---|---|
+| **OpenRouter** (`scripts/`) | ~**$0.00002** | ~**0.4s** | `OPENROUTER_API_KEY` | `POST /api/alpha/decisions` |
+| **OpenCode Zen** (`opencode/`) | **$0.00** — free | ~1.0s | **none** | `POST https://opencode.ai/zen/v1/systemone` |
+
+At ~1/250th the cost of one frontier-model call, it becomes practical to ask a model
+"is this actually safe to do?" before every action. The Zen provider makes that free.
 
 ```
 state  ──►  POST /api/alpha/decisions  ──►  {choice | score | noul}  ──►  your code branches
-                                              ~0.4s, ~$0.00002
+                (OpenRouter, keyed)             ~0.4s, ~$0.00002
+state  ──►  POST /zen/v1/systemone  ─────────►  {choice | score | noul}  ──►  your code branches
+                (Zen, keyless)                  ~1.0s, free
 ```
 
 ## What it does
@@ -23,6 +29,11 @@ state  ──►  POST /api/alpha/decisions  ──►  {choice | score | noul} 
 - **Classifies** and extracts typed labels from messy text
 - **Scores** on a rubric — returns a position on your scale, not just a label
 - **Guards** against prompt injection, by keeping untrusted text separate from policy
+
+Both providers expose the **same three primitives, the same CLI, and the same four saved
+question sets.** The only difference is the transport — so you can develop against the free
+keyless Zen provider and switch to OpenRouter for latency-sensitive paths without changing a
+line of your question sets.
 
 ## Why a decision model instead of asking a chat model
 
@@ -38,9 +49,13 @@ state  ──►  POST /api/alpha/decisions  ──►  {choice | score | noul} 
 
 ```bash
 git clone https://github.com/saif27217/jev-hermes && cd jev-hermes
-export OPENROUTER_API_KEY=sk-or-v1-...        # same key as OpenRouter chat
 
-# ask a single yes/no question
+# --- free, no key needed -------------------------------------------------
+python3 opencode/scripts/jev_client.py --state "Incoming ticket: payouts failing 3 days" \
+    --noul urgent "Is this time-sensitive?"
+
+# --- or the paid OpenRouter provider --------------------------------------
+export OPENROUTER_API_KEY=sk-or-v1-...        # same key as OpenRouter chat
 python3 scripts/jev_client.py --state "Incoming ticket: payouts failing 3 days" \
     --noul urgent "Is this time-sensitive?"
 
@@ -60,7 +75,7 @@ No installation, no dependencies. The client is Python standard library only —
 ## Use it as a library
 
 ```python
-import sys; sys.path.insert(0, "scripts")
+import sys; sys.path.insert(0, "scripts")          # or "opencode/scripts" for Zen
 from jev_client import noul, choice, score, gate, cascade_verify, ask_jev, load_decision
 
 noul("ticket text", "Is this time-sensitive?")                    # -> 0.23
@@ -106,22 +121,30 @@ jev-hermes/
 ├── AGENTS.md                  canonical agent doc — the skill for any agent touching this repo
 ├── sync.sh                    mirror the canonical Hermes skill into this repo (ONE-WAY)
 ├── MANIFEST.sha256            hashes of mirrored files; CI fails if the mirror drifts
-├── scripts/
+├── scripts/                    OpenRouter provider (paid, keyed, ~0.4s)
 │   ├── jev_client.py          stdlib-only client, CLI, typed helpers, gate + cascade   [mirrored]
 │   └── decisions/             reusable saved question sets
 │       ├── skill_routing.json      route a task to a workflow family
 │       ├── answer_verify.json      verify a draft answer against its sources
 │       ├── doc_triage.json         classify an incoming document
 │       └── sop_audit_triage.json   triage a SOP-audit request
-├── docs/
+├── docs/                       OpenRouter wire format
 │   ├── design.md              how to design decisions for ANY new use case            [mirrored]
 │   ├── api.md                 full wire format, field shapes, errors                  [mirrored]
 │   └── recipes.md             worked patterns incl. gating and cascades               [mirrored]
+├── opencode/                   OpenCode Zen provider (FREE, keyless, ~1.0s)
+│   ├── scripts/
+│   │   ├── jev_client.py      same API, /v1/systemone transport                        [mirrored]
+│   │   └── decisions/         the same 4 question sets                                [mirrored]
+│   └── docs/                  design + recipes shared; api.md is Zen-specific         [mirrored]
 ├── examples/                  4 runnable scripts, one per pattern
 ├── tests/
-│   ├── test_client.py         54 offline tests — no network, no API key needed
-│   └── test_live_smoke.py     7 real API tests, skipped unless JEV_LIVE=1
-└── .github/workflows/ci.yml   offline tests on 4 Python versions + mirror + decision-set checks
+│   ├── test_client.py             54 offline tests — OpenRouter, no key needed
+│   ├── test_live_smoke.py         7 real API tests, skipped unless JEV_LIVE=1
+│   ├── test_opencode_client.py    28 offline tests — Zen, no network, no key
+│   └── test_opencode_live.py      9 real Zen tests — free, so they run by default
+└── .github/workflows/ci.yml   both providers' offline suites on 4 Python versions,
+                               mirror integrity, decision-set shape, Zen live smoke
 ```
 
 Files marked *[mirrored]* are exact copies of the canonical skill and must never be edited
@@ -171,18 +194,28 @@ Full method: [`docs/design.md`](docs/design.md) · Worked patterns: [`docs/recip
 pip install -r requirements-dev.txt
 
 pytest tests/test_client.py -q                 # 54 offline tests, ~0.1s, no key needed
-JEV_LIVE=1 pytest tests/test_live_smoke.py -q  # 7 tests against the real API
-./sync.sh --check                              # is the mirror still in sync?
+pytest tests/test_opencode_client.py -q        # 28 offline tests, no key needed
+pytest tests/test_opencode_live.py -q          # 9 LIVE Zen calls, free, ~10s
+JEV_LIVE=1 pytest tests/test_live_smoke.py -q  # 7 live OpenRouter tests (needs a funded key)
+./sync.sh --check                              # are both mirrors still in sync?
 ```
 
-The offline suite installs a stub that makes any real network call fail loudly, so it can
-never silently start depending on the API.
+The offline suites install a stub that makes any real network call fail loudly, so they can
+never silently start depending on the API. The Zen live suite opts out of that guard with an
+explicit `zen_live` marker — it is real traffic, and it is free.
 
 ## Keeping the mirror honest
 
-The canonical copy of `scripts/jev_client.py` and `docs/*.md` lives in a Hermes skill at
-`~/.hermes/skills/openrouter-jev/`. This repo is the published mirror, plus the tests,
-examples, README, and CI that don't belong in a skill directory.
+The canonical copies live in **two** Hermes skills, one per provider:
+
+| Provider | Canonical skill |
+|---|---|
+| OpenRouter | `~/.hermes/skills/openrouter-jev/` |
+| OpenCode Zen | `~/.hermes/skills/jev-opencode/` |
+
+This repo is the published mirror of both, plus the tests, examples, README, and CI that
+don't belong in a skill directory. `MANIFEST.sha256` covers **both** providers' clients,
+docs, and question sets — a hand-edited question set fails CI just like an edited client.
 
 **One direction of truth: skill → repo.**
 
@@ -194,15 +227,61 @@ examples, README, and CI that don't belong in a skill directory.
 CI runs the `--check` equivalent (`sha256sum -c MANIFEST.sha256`) on every push, so a stale or
 hand-edited mirror fails the build instead of drifting quietly.
 
+## OpenCode Zen: the free, keyless provider
+
+Everything above works identically on Zen, with three differences that matter.
+
+**1. The endpoint is `/zen/v1/systemone`, not `/chat/completions`.** This is the one that
+bites. `jev-1.13-free` is listed by `/zen/v1/models` and shows up in model pickers, but
+posting it to the chat endpoint returns **HTTP 500 every time** — with or without
+attribution headers, streaming or not. A 500 there means *wrong path*, not *model down*.
+
+**2. No key is needed, and a bad key actively breaks the free model.** Keyless returns
+`cost: "0"`. Sending a placeholder bearer (`***`) returns **401** — the client therefore
+never sends a placeholder, and retries keyless if a real-looking key 401s.
+
+**3. `cost` is a top-level string, not inside `usage`.** OpenRouter nests it; Zen returns
+`{"cost": "0"}` beside `usage`.
+
+```bash
+# the same question, free
+python3 opencode/scripts/jev_client.py \
+    --state "Lot L4471 control at 2.9 SD on an expired reagent lot. Patient result released." \
+    --noul patient_impacted "Were patient results affected?" \
+    --score severity "How serious is this?" --criteria "minor:cosmetic,moderate:repeat,critical:patient harm"
+# -> patient_impacted: YES (p=0.97)
+#    severity: critical (conf 0.96) {critical: 0.98, moderate: 0.02, minor: 0}
+#    Cost: $0.000000
+```
+
+**Free is not unlimited, and not private-by-default.** Zen's docs describe the free tiers as
+"limited time" feedback programmes, and flag that some (MiMo, Ling, Nemotron) may use
+submitted data to improve their models. Space Bunny Free and LongCat are explicitly
+zero-retention. The jev free tier is fine as a classifier in front of your prompts; do not
+put patient identifiers into any free Zen model.
+
 ## Verified dependencies
 
 | Dependency | Version | Notes |
 |---|---|---|
 | Python | 3.10+ | uses `str \| None` syntax; tested on 3.10–3.13 |
+| Third-party packages | none | standard library only, by design |
+
+**OpenRouter provider**
+
+| Dependency | Version | Notes |
+|---|---|---|
 | Jev model | `typesafe/jev-1.13` | pin this. `~typesafe/jev-latest` follows the newest release |
 | Endpoint | `POST https://openrouter.ai/api/alpha/decisions` | an **alpha** path — not `/v1/chat/completions` |
 | Auth | `OPENROUTER_API_KEY` | the same key works for chat and decisions |
-| Third-party packages | none | standard library only, by design |
+
+**OpenCode Zen provider**
+
+| Dependency | Version | Notes |
+|---|---|---|
+| Jev model | `jev-1.13-free` | `cost: "0"`, no key. Paid `jev-1.13` is $0.042/1M input and needs a funded workspace |
+| Endpoint | `POST https://opencode.ai/zen/v1/systemone` | a **System One** path — not `/v1/chat/completions` |
+| Auth | none | optional `OPENCODE_ZEN_API_KEY` for the paid model only |
 
 ## Known issues
 
@@ -218,6 +297,12 @@ hand-edited mirror fails the build instead of drifting quietly.
   usually a sign to add `criteria` rather than to accept the number.
 - **Latency is not the win here; cost is.** 0.4s is fine for gating and routing, too slow to
   sit in a per-token streaming loop.
+- **Zen's free jev is deterministic.** Five identical calls returned 0.97, 0.97, 0.97, 0.97,
+  0.97 (and 0.01 ×5 for the negative case). Excellent for reproducible tests — but you cannot
+  sweep a threshold by resampling the way you can with OpenRouter's jev, which hedges.
+- **Zen's free tier can vanish.** It is advertised as "available for a limited time". If the
+  free model disappears, the Zen live suite fails loudly rather than skipping — set
+  `JEV_SKIP_ZEN_LIVE=1` or mark those tests xfail if you would rather not be paged.
 
 ## Documentation
 

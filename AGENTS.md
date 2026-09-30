@@ -8,16 +8,20 @@ be loaded as procedural context: every section answers "if you want to X, do Y".
 ## 1. Project identity
 
 **What it is.** A standard-library Python client plus a design method for TypeSafe's **Jev**
-decision model, called through OpenRouter's Decisions API. It turns a situation into typed,
+decision model, exposed on **two providers**: OpenRouter's Decisions API (`scripts/`) and
+OpenCode Zen's free System One endpoint (`opencode/`). It turns a situation into typed,
 calibrated judgements (`choice`, `score`, `noul`) for routing, gating, verification,
 classification, and grading.
 
 **Owner.** `saif27217`. Contact via GitHub issues.
 
 **Why it exists.** Asking a chat model "should I do this?" is expensive, slow, and returns
-prose that is hard to branch on. Jev costs ~$0.00002 per request, returns in ~0.4s, and hands
-back numbers with a `confidence` field. That is cheap enough to guard *every* action rather
-than a sample of them.
+prose that is hard to branch on. Jev costs ~$0.00002 per request (~**free** on Zen), returns
+in ~0.4s (~1.0s on Zen), and hands back numbers with a `confidence` field. That is cheap enough
+to guard *every* action rather than a sample of them.
+
+**Provider choice, in one line:** develop and volume-run on Zen (free, keyless); use
+OpenRouter when you need the lower latency or want a funded, less volatile free tier.
 
 **What makes it different.** No dependencies. No SDK. No parsing of free text. The client is
 one file you can copy anywhere, and the repo ships the *method* for designing new decisions,
@@ -39,7 +43,7 @@ First lookup for common requests.
 | "Is the mirror in sync?" | `./sync.sh --check` |
 | "I changed the client / docs in the skill" | `./sync.sh` then commit `MANIFEST.sha256` with it |
 | "I want to change `scripts/jev_client.py` here" | Don't. Edit the skill (§8.1), then `./sync.sh` |
-| "Does it still work?" | `pytest tests/test_client.py -q` then `JEV_LIVE=1 pytest tests/test_live_smoke.py -q` |
+| "Does it still work?" | `pytest tests/test_client.py tests/test_opencode_client.py -q`, then `pytest tests/test_opencode_live.py -q` |
 | "Add a new decision set" | New file in `scripts/decisions/`, then §9.1. Check CI's shape rules |
 | "Is this the right model name?" | §5.1 — pin `typesafe/jev-1.13`, never hardcode `~typesafe/jev-latest` |
 | "It returned 400" | §8.2 — usually a top-level field nested under `decisionsRequest` |
@@ -47,6 +51,10 @@ First lookup for common requests.
 | "Costs look wrong" | §8.6 — `output_tokens` are free; only input is billed |
 | "A test made a real network call" | §8.5 — the offline guard is disabled by `JEV_LIVE=1` |
 | "Why did the gate say review?" | §8.7 — thresholds, not the model. `approve_at` / `block_at` |
+| "Jev 500s on Zen" | §8.14 — you posted to `/chat/completions`. It must be `/zen/v1/systemone` |
+| "Zen 401s on the free model" | §8.14 — a placeholder/stale key was sent. Keyless is the default |
+| "Which provider should I use?" | §1 and §8.14 — Zen is free and keyless; OpenRouter is ~0.4s |
+| "Add a new decision set" (Zen copy) | Same file as OpenRouter; `./sync.sh` mirrors it to both (§8.1) |
 
 ---
 
@@ -63,6 +71,11 @@ First lookup for common requests.
 | `docs/design.md` | you are designing a NEW decision | **never here** — edit the skill, then `./sync.sh` |
 | `docs/api.md` | you need field shapes or error codes | **never here** — edit the skill, then `./sync.sh` |
 | `docs/recipes.md` | you want a worked pattern to copy | **never here** — edit the skill, then `./sync.sh` |
+| `opencode/scripts/jev_client.py` | you need the Zen API surface | **never here** — edit the `jev-opencode` skill, then `./sync.sh` |
+| `opencode/scripts/decisions/*.json` | you need the Zen question sets | **never here** — edit the skill, then `./sync.sh` |
+| `opencode/docs/api.md` | you need Zen field shapes / error codes | **never here** — edit the skill, then `./sync.sh` |
+| `tests/test_opencode_client.py` | you change Zen client behaviour | behaviour changes — add a test first |
+| `tests/test_opencode_live.py` | you validate Zen against reality | the Zen contract changes |
 | `examples/*.py` | you want a runnable end-to-end script | you add a genuinely new pattern |
 | `tests/test_client.py` | you are changing client behaviour | behaviour changes — add a test first |
 | `tests/test_live_smoke.py` | you are validating against reality | the real API's contract changes |
@@ -110,33 +123,49 @@ and tests monkeypatch `time.sleep` so they never actually wait.
 
 ```bash
 git clone https://github.com/saif27217/jev-hermes && cd jev-hermes
+
+# free path — no key, no account
+python3 opencode/scripts/jev_client.py --list  # smoke check: no network needed
+
+# paid path
 export OPENROUTER_API_KEY=sk-or-v1-...        # same key as OpenRouter chat
-python3 scripts/jev_client.py --list          # smoke check: no network needed
+python3 scripts/jev_client.py --list
 
 pip install -r requirements-dev.txt           # only for the test suite
-pytest tests/test_client.py -q
+pytest tests/test_client.py tests/test_opencode_client.py -q
 ```
 
-There is no install step for the client itself — it is standard library only. Copy
-`scripts/jev_client.py` into any project and it works.
+There is no install step for either client — standard library only. Copy
+`scripts/jev_client.py` (or `opencode/scripts/jev_client.py`) into any project and it works.
 
 ### 5.2 Choosing a model slug
 
 ```python
-ENDPOINT    = "https://openrouter.ai/api/alpha/decisions"
-DEFAULT_MODEL  = "typesafe/jev-1.13"      # pinned — use this
-ROLLING_MODEL  = "~typesafe/jev-latest"   # follows the newest release; avoid in production
+# OpenRouter (scripts/jev_client.py)
+ENDPOINT        = "https://openrouter.ai/api/alpha/decisions"
+DEFAULT_MODEL   = "typesafe/jev-1.13"      # pinned — use this
+ROLLING_MODEL   = "~typesafe/jev-latest"   # follows the newest release; avoid in production
+
+# OpenCode Zen (opencode/scripts/jev_client.py)
+ENDPOINT        = "https://opencode.ai/zen/v1/systemone"
+DEFAULT_MODEL   = "jev-1.13-free"          # free, keyless, cost "0"
+PAID_MODEL      = "jev-1.13"               # $0.042/1M input, needs a funded workspace
 ```
 
-Pin the version. The rolling alias changes behaviour under you, and since thresholds are tuned
-against a model's calibration, a silent upgrade invalidates them.
+Pin the version on either provider. A rolling alias changes behaviour under you, and since
+thresholds are tuned against a model's calibration, a silent upgrade invalidates them.
+
+**The two models are not calibrated identically.** The free Zen model is markedly more
+*decisive*: five identical calls returned 0.97 five times, where OpenRouter's jev hedges
+around the same value. Re-tune thresholds per provider rather than copying them across.
 
 ### 5.3 Running the tests without a system pytest
 
 PEP 668 environments (Debian, Homebrew Python) refuse a bare `pip install`. Use `uv`:
 
 ```bash
-uv run --with pytest pytest tests/test_client.py -q
+uv run --with pytest pytest tests/test_client.py tests/test_opencode_client.py -q
+uv run --with pytest pytest tests/test_opencode_live.py -q   # free, keyless, real calls
 JEV_LIVE=1 uv run --with pytest pytest tests/test_live_smoke.py -q
 ```
 
@@ -199,20 +228,21 @@ out = cascade_verify({"question": q, "sources": s, "assistant_answer": draft}, a
 Run these after any change. All four must pass.
 
 ```bash
-pytest tests/test_client.py -q                  # 54 offline tests, ~0.1s
-JEV_LIVE=1 pytest tests/test_live_smoke.py -q   # 7 tests against the real API
-./sync.sh --check                               # mirror matches MANIFEST.sha256
-python -m compileall -q scripts                 # byte-compiles on this Python version
+pytest tests/test_client.py tests/test_opencode_client.py -q   # 82 offline tests, ~0.2s
+pytest tests/test_opencode_live.py -q                          # 9 live Zen tests, free, ~10s
+JEV_LIVE=1 pytest tests/test_live_smoke.py -q                  # 7 live OpenRouter tests
+./sync.sh --check                              # BOTH mirrors match MANIFEST.sha256
+python -m compileall -q scripts opencode/scripts # byte-compiles on this Python version
 ```
 
-If you changed `scripts/jev_client.py` (i.e. the skill), also confirm the sync happened:
+If you changed either client (i.e. a skill), also confirm the sync happened:
 
 ```bash
 ./sync.sh && git diff --stat          # MANIFEST.sha256 must move with the client
 ```
 
-CI additionally validates every decision set: valid JSON, a known `type`, non-empty
-`instructions`, and at least two `criteria` for any `choice`.
+CI additionally validates every decision set **on both providers**: valid JSON, a known
+`type`, non-empty `instructions`, and at least two `criteria` for any `choice`.
 
 ---
 
@@ -220,11 +250,17 @@ CI additionally validates every decision set: valid JSON, a known `type`, non-em
 
 ### 8.1 The client here is a MIRROR — editing it here is the #1 mistake
 
-`scripts/jev_client.py`, `scripts/decisions/*.json`, and `docs/*.md` are exact copies of a
-Hermes skill:
+`scripts/jev_client.py`, `scripts/decisions/*.json`, `docs/*.md` **and their `opencode/`
+counterparts** are exact copies of two Hermes skills:
 
-- **Canonical:** `~/.hermes/skills/openrouter-jev/` (`scripts/jev_client.py`, `scripts/decisions/`, `references/*.md`)
-- **Mirror:** this repo (`scripts/`, `docs/`)
+| Provider | Canonical skill | Mirror |
+|---|---|---|
+| OpenRouter | `~/.hermes/skills/openrouter-jev/` | `scripts/`, `docs/` |
+| OpenCode Zen | `~/.hermes/skills/jev-opencode/` | `opencode/scripts/`, `opencode/docs/` |
+
+`MANIFEST.sha256` covers both. If you edit one provider's client, the other's manifest entry
+does not move — but if you add a **question set**, it must exist in the appropriate skill and
+`./sync.sh` will mirror it to *both* providers (they share the same set library).
 
 Editing the mirror "works" and then the next `./sync.sh` silently reverts it. This actually
 happened during the repo's first build: the client was copied into the repo *before* two
@@ -302,7 +338,21 @@ response raises. Tests must push both answers — this caused five initial test 
 `--score` without a `--criteria` is now a hard error rather than an empty `criteria` list that
 the API rejects.
 
-### 8.12 `secrets` is not available in a step's `if:` — use a shell guard
+### 8.12 Two providers, two files both named `jev_client.py`
+
+Both clients are called `jev_client.py` (they are separate standalone files by design, not
+a shared module). A plain `import jev_client` therefore returns whichever loaded **first**,
+so collecting both suites in one pytest session made the OpenRouter tests silently exercise
+the Zen client — 4 misleading failures (`Authorization` header `None`, placeholder key not
+rejected, `Request ID` missing from verbose output).
+
+`tests/conftest.py` owns a `load_client(name)` helper that imports each file under a unique
+module name (`jev_client`, `oc_jev_client`) via `importlib.util`. **Use it in any new test
+file; do not add a `sys.path.insert` shim** — that is what reintroduces the collision. Symptom
+to recognise: a test asserting an OpenRouter-only field fails only when both files are
+collected together.
+
+### 8.13 `secrets` is not available in a step's `if:` — use a shell guard
 
 The live-smoke CI step cannot use `if: ${{ secrets.OPENROUTER_API_KEY != '' }}`; the `secrets`
 context is not exposed to `if` expressions, so the condition silently evaluates false and the
@@ -317,6 +367,41 @@ step is skipped forever — a green build that never tested anything. The workin
 
 Add the secret under **Settings → Secrets → Actions** to actually exercise it.
 
+### 8.14 OpenCode Zen: three traps, all measured
+
+**The endpoint is `/zen/v1/systemone`, never `/chat/completions`.** `jev-1.13-free` appears in
+`/zen/v1/models`, so it looks like a normal chat model and Hermes will happily list it — but
+posting it to the chat endpoint returns **HTTP 500 on every attempt** (with and without
+attribution headers, streaming or not, with or without `max_tokens`). A 500 there means
+*wrong path*, not *model down*. Jev is a System One model: it evaluates a `state` against
+typed questions and returns values plus probabilities. `tests/test_opencode_live.py::
+test_chat_completions_endpoint_would_500` asserts this so the trap stays documented.
+
+**A placeholder or stale key breaks the *free* model.** Keyless → `200` with `cost: "0"`.
+A placeholder bearer such as `Bearer ***` → `401 AuthError: Invalid API key`. The client
+therefore (1) never sends a key that matches a placeholder pattern, and (2) retries **keyless**
+when a real-looking key 401s. A 401 on the free model means *bad key*, not *no entitlement*.
+
+**`cost` is a top-level string, not inside `usage`.** OpenRouter nests it; Zen returns
+`{"cost": "0"}` beside `usage`. Anything reading `usage["cost"]` gets a `KeyError` on Zen.
+
+Two more, worth knowing before you build on it:
+
+- **The free model is deterministic.** 5 identical calls → `0.97, 0.97, 0.97, 0.97, 0.97`
+  (and `0.01 ×5` for a clear negative). Great for reproducible tests; it means you **cannot**
+  sweep a threshold by resampling as you can on OpenRouter. Re-tune thresholds deliberately
+  per provider (§5.2).
+- **The free tier is "limited time" and not uniformly private.** Zen's docs flag MiMo, Ling and
+  Nemotron free endpoints as potentially using submitted data to improve their models. Space
+  Bunny Free and LongCat are explicitly zero-retention. Do not put patient identifiers into
+  any free Zen model — jev as a classifier in front of your prompt is fine.
+
+Zen's other "free" models are mostly unusable from outside the OpenCode client: `mimo-*`,
+`longcat-*`, `ling-*` and `nemotron-*` all return
+`403 FreeTierError: OpenCode's free tier can only be used from within OpenCode`, and
+`muse-spark-*-contributor-free` returns 500. `space-bunny-free` and `jev-1.13-free` are the two
+that work keyless.
+
 ---
 
 ## 9. Extension recipes
@@ -330,18 +415,23 @@ Add the secret under **Settings → Secrets → Actions** to actually exercise i
    print(ask_many(state, my_questions))
    ```
 3. Save to the **skill**: `~/.hermes/skills/openrouter-jev/scripts/decisions/<name>.json`
+   (and the same file in `~/.hermes/skills/jev-opencode/scripts/decisions/` — both providers
+   share one question library)
 4. `./sync.sh`
-5. Verify: `pytest tests/test_client.py -q` (the shipped-sets test enumerates every file) then
-   `JEV_LIVE=1 pytest tests/test_live_smoke.py -q`
+5. Verify: `pytest tests/test_client.py tests/test_opencode_client.py -q` (the shipped-sets
+   tests enumerate every file on both providers), then
+   `pytest tests/test_opencode_live.py -q` and `JEV_LIVE=1 pytest tests/test_live_smoke.py -q`
 
 CI enforces the shape: valid JSON, `type` in `{choice, score, noul}`, non-empty `instructions`,
 ≥2 `criteria` for a `choice`.
 
 ### 9.2 Add a new primitive wrapper
 
-Add it to the skill's `scripts/jev_client.py`, keep the return value unpacked and typed (see
-`choice` / `score`), and add offline tests using the `fake_transport` fixture — never a live
-call. Then `./sync.sh`.
+Add it to the **skill's** `scripts/jev_client.py` — and to the `jev-opencode` skill's copy,
+since the two clients are separate files by design, not a shared module. Keep the return
+value unpacked and typed (see `choice` / `score`), and add offline tests using the
+`fake_transport` fixture (or the Zen suite's transport double) — never a live call. Then
+`./sync.sh`.
 
 ### 9.3 Add an example
 
@@ -352,25 +442,33 @@ stating the run command, and a mention in `examples/README.md`. Prefer real-look
 ### 9.4 Use it from outside this repo
 
 ```bash
+# free, keyless
+cp ~/projects/jev-hermes/opencode/scripts/jev_client.py /path/to/your/project/
+
+# or paid
 cp ~/projects/jev-hermes/scripts/jev_client.py /path/to/your/project/
 export OPENROUTER_API_KEY=sk-or-v1-...
 ```
 
-Or vendor the repo path and `sys.path.insert(0, ".../scripts")`. There is nothing to install.
+Or vendor the repo path and `sys.path.insert(0, ".../scripts")` (or `.../opencode/scripts`).
+There is nothing to install.
 
 ---
 
 ## 10. Self-test commands
 
-Copy-paste health check. Expect: 54 passed, 7 passed, "clean", and no output from compileall.
+Copy-paste health check. Expect: **82 passed**, **9 passed**, "clean", and no output from
+compileall.
 
 ```bash
 cd ~/projects/jev-hermes
-pytest tests/test_client.py -q
-JEV_LIVE=1 pytest tests/test_live_smoke.py -q
+pytest tests/test_client.py tests/test_opencode_client.py -q     # 82 offline tests
+pytest tests/test_opencode_live.py -q                           # 9 free live Zen tests
+JEV_LIVE=1 pytest tests/test_live_smoke.py -q                   # 7 live OpenRouter tests
 ./sync.sh --check
-python -m compileall -q scripts && echo "compiles clean"
+python -m compileall -q scripts opencode/scripts && echo "compiles clean"
 python3 scripts/jev_client.py --list
+python3 opencode/scripts/jev_client.py --list
 for f in $(find . -name '*.sh'); do bash -n "$f" || echo "SYNTAX FAIL: $f"; done
 ```
 

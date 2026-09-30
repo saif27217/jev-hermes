@@ -1,0 +1,26 @@
+{
+  "doc_type": {
+    "type": "choice",
+    "instructions": "Which kind of document is `doc`?",
+    "criteria": {
+      "kit_insert": "Manufacturer reagent/assay kit insert or IFU",
+      "sop": "Standard operating procedure or controlled lab document",
+      "instrument_manual": "Instrument or analyzer user/operator manual",
+      "paper": "Scientific paper or guideline",
+      "sheet": "Spreadsheet or tabular data file",
+      "other": "None of the above"
+    }
+  },
+  "needs_ocr": {
+    "type": "noul",
+    "instructions": "Does `doc` appear to be a scan or image-based document rather than born-digital text?"
+  },
+  "is_foreign_language": {
+    "type": "noul",
+    "instructions": "Is the primary language of `doc` not English?"
+  },
+  "has_tables": {
+    "type": "noul",
+    "instructions": "Does `doc` contain reference ranges, specifications, or other tabular data that must be preserved exactly?"
+  }
+}

@@ -22,14 +22,17 @@ jobs:
       - name: Install test deps
         run: pip install -r requirements-dev.txt
 
-      - name: Verify the mirror is in sync with the skill
+      - name: Verify both mirrors are in sync with their skills
         run: sha256sum -c MANIFEST.sha256
 
-      - name: Byte-compile the client
-        run: python -m compileall -q scripts
+      - name: Byte-compile both clients
+        run: python -m compileall -q scripts opencode/scripts
 
-      - name: Offline test suite (never touches the network)
+      - name: OpenRouter client — offline suite (never touches the network)
         run: pytest tests/test_client.py -q
+
+      - name: OpenCode Zen client — offline suite (never touches the network)
+        run: pytest tests/test_opencode_client.py -q
 
       - name: Live smoke tests (only when the key secret is present)
         env:
@@ -41,20 +44,34 @@ jobs:
             echo "OPENROUTER_API_KEY secret not set — skipping live tests (offline suite already passed)"
           fi
 
+      - name: Live smoke tests — OpenCode Zen (free and keyless, so these always run)
+        run: pytest tests/test_opencode_live.py -q
+        env:
+          JEV_SKIP_ZEN_LIVE: "0"
+
   decision-sets:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        provider: [openrouter, opencode]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
       - name: Every decision set is valid JSON with the expected shape
+        env:
+          PROVIDER: ${{ matrix.provider }}
         run: |
           python - <<'EOF'
-          import json, pathlib, sys
+          import json, os, pathlib, sys
+          root = os.environ["PROVIDER"]
+          base = pathlib.Path("scripts" if root == "openrouter" else "opencode/scripts")
           ok = True
-          for p in sorted(pathlib.Path("scripts/decisions").glob("*.json")):
+          seen = 0
+          for p in sorted((base / "decisions").glob("*.json")):
               data = json.loads(p.read_text())
+              seen += 1
               if not data:
                   print(f"EMPTY: {p}"); ok = False
               for name, q in data.items():
@@ -64,5 +81,7 @@ jobs:
                       print(f"NO INSTRUCTIONS: {p}:{name}"); ok = False
                   if q.get("type") == "choice" and len(q.get("criteria", {})) < 2:
                       print(f"TOO FEW CRITERIA: {p}:{name}"); ok = False
+          if not seen:
+              print(f"NO DECISION SETS FOUND under {base}"); ok = False
           sys.exit(0 if ok else 1)
           EOF

@@ -1,0 +1,27 @@
+{
+  "primary_skill": {
+    "type": "choice",
+    "instructions": "Which skill family is the primary fit for `request`?",
+    "criteria": {
+      "pdf": "PDF or document text extraction",
+      "web_research": "Web search and content extraction",
+      "clinical_audit": "SOP, kit-insert, or clinical lab audit",
+      "documentation": "Creating docs, slides, or presentations",
+      "audio": "Voice or audio generation and transcription",
+      "data_analysis": "Data processing, RAG, or analysis",
+      "other": "None of the above"
+    }
+  },
+  "needs_multi_skill": {
+    "type": "noul",
+    "instructions": "Will this task likely need more than one skill combined?",
+    "criteria": {
+      "true": { "what": "The request spans two or more of the listed families", "examples": ["Extract a PDF then build slides from it"] },
+      "false": { "what": "A single family covers the whole request", "not_for": "A task that merely touches several files of one kind" }
+    }
+  },
+  "is_urgent": {
+    "type": "noul",
+    "instructions": "Does `request` convey time-sensitivity or a blocking failure?"
+  }
+}

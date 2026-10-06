@@ -543,3 +543,7 @@ the live API behaviour. Everything else is documentation of those.
 - SSH stdin redirect to Termux files doesn't work — write scripts locally, execute remotely.
 - Amazon bot-protection: `goto --json` gives titles; `cli.py text` gives prices (regex `₹`).
 - Sleep 5s between pages for Amazon JS render.
+
+### amazon-deals-ranked-jev
+
+TBP extraction + Jev 4-lens scoring pipeline for product deals. Extract via grep-on-phone, score via `/api/alpha/decisions` with 4 lenses (investment/productivity/use-case/scarcity), composite = mean. BUY ≥ 6.5, MAYBE ≥ 5. Full workflow: `workflows/amazon-deals-ranked-jev.md`.

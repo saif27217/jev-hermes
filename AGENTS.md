@@ -527,3 +527,19 @@ Context a fresh agent needs, in the order it becomes relevant.
 **If you find an inconsistency between this file and reality, fix this file.**
 The single sources of truth are the canonical skill at `~/.hermes/skills/openrouter-jev/` and
 the live API behaviour. Everything else is documentation of those.
+
+## Workflow lessons (2026-10-06)
+
+### Jev Decisions API
+- `criteria` must be array of `{"key": "...", "description": "..."}` objects in the wire format. String form works only in CLI.
+- `state` must be a dict, not a string.
+- 15 score questions in one request: ~4150 in tokens, $0.000174, 0.5s.
+- Zen free tier (`opencode.ai/zen/v1/systemone`) can return 422 "Endpoint is unavailable" — fall back to OpenRouter.
+- Both `openrouter-jev` and `jev-opencode` skills have `scripts/jev_client.py` — use `importlib.util.spec_from_file_location` to load the correct one.
+- OpenRouter model is `typesafe/jev-1.13`; Zen model is `jev-1.13-free` (keyless).
+
+### Termux Browser Pilot
+- `/tmp` doesn't exist on Termux — use `~/` or `~/termux-browser-pilot/`.
+- SSH stdin redirect to Termux files doesn't work — write scripts locally, execute remotely.
+- Amazon bot-protection: `goto --json` gives titles; `cli.py text` gives prices (regex `₹`).
+- Sleep 5s between pages for Amazon JS render.

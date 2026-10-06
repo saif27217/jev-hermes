@@ -269,3 +269,11 @@ At typical decision size (~540 input tokens): ~$0.000023 per call. ~44,000 decis
 - **Availability**: 99.80%
 - **P50 latency**: 0.24s
 - **System**: "System One" — structured decision model, not a chat model
+
+## Pitfalls (verified 2026-10-06)
+
+- `criteria` sent as a plain string (not array) → HTTP 400 `"expected array, received string"`. The CLI's `--criteria "1:worst,3:poor"` string form is parsed client-side; the wire format is always an array.
+- `state` sent as a string → HTTP 400. Wire format is always an object/dict.
+- `opencode.ai/api/alpha/decisions` (wrong path on OpenRouter's key) → HTTP 403 Cloudflare from some IPs. The decisions API lives at `openrouter.ai/api/alpha/decisions`.
+- Model `typesafe/jev-1.13-20260917` (version string) → HTTP 404 on OpenRouter. Use `typesafe/jev-1.13`.
+- Scale measured: 56 score questions, shared state → 14385 in / 1382 out tokens, $0.0006, 0.78s. All parallel in one request; per-question marginal cost stays small.

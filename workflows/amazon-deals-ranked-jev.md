@@ -9,18 +9,35 @@ Extract Amazon product pages via Termux Browser Pilot, score value-to-cost via J
 
 ## Pipeline
 
-### 1. Extract (Termux Browser Pilot) — grep-on-phone
+### 1. Extract (Termux Browser Pilot) — frequency-based price extraction
 
 - Start daemon: `ssh -p 8022 <termux_host> "~/termux-browser-pilot/start-daemon.sh"`
-- Navigate in batches: `cli.py goto <url> --json` → captures title + ASIN
-- Wait 8-10s for JS render
-- **Extract text ON THE PHONE** — `cli.py text | grep <product_keywords> | grep -v <nav_noise> | head -30 > extracted/<name>.txt`
+- Navigate: `cli.py goto <url> --json` → captures title + ASIN
+- Wait 8-10s for JS render (product detail pages need more than search pages)
+- **Extract text ON THE PHONE** — `cli.py text | grep <product_keywords> | head -30 > extracted/<name>.txt`
 - Only ~1-2KB per product comes back (not full HTML)
 - Pull all files in one SSH call at the end
 - Key: filter with product-relevant keywords (₹, MB/s, GB, TB, USB, warranty, speed, specs...) AND exclude navigation noise (Cart, Account, Delivery, Menu...)
 - Works on Amazon bot-protection pages — rendered text includes product content
 - Prices come from rendered text (₹ patterns), titles from goto JSON
 - Amazon URLs may redirect — verify product name matches expected
+
+**Price extraction strategy (learned 2026-10-07):**
+
+| Method | How it works | Pitfall |
+|--------|-------------|---------|
+| **Percent savings anchor** (`₹X with N% savings`) | Picks first matching line | Ads/recommendations inject fake prices — hijacks the anchor |
+| **First price** (first ₹>=150) | Simple, fast | Fails when MRP > deal price (picks MRP first) |
+| **Frequency-based** ✅ | Count all prices, pick most frequent ≥150 | Fails when MRP appears more often than deal price (rare) |
+
+**Recommended:** frequency-based as primary, first-price as fallback. Verify edge cases manually.
+
+Frequency extraction pattern (bash):
+```bash
+txt=$(python3 cli.py text 2>/dev/null)
+price=$(echo "$txt" | grep -E '₹[0-9]' | grep -vE '/ count|per count|per month|Warranty|warranty|Extended' | \
+    grep -oE '₹[0-9][0-9,]*' | tr -d '₹,' | sort | uniq -c | sort -rn | head -1 | awk '{print $2}')
+```
 
 ### 2. Score (Jev Decisions API) — 4-lens methodology
 

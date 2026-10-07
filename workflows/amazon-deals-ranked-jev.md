@@ -9,7 +9,7 @@ Extract Amazon product pages via Termux Browser Pilot, score value-to-cost via J
 
 ## Pipeline
 
-### 1. Extract (Termux Browser Pilot) — frequency-based price extraction
+### 1. Extract (Termux Browser Pilot) — first-price (buy-box) extraction
 
 - Start daemon: `ssh -p 8022 <termux_host> "~/termux-browser-pilot/start-daemon.sh"`
 - Navigate: `cli.py goto <url> --json` → captures title + ASIN
@@ -26,17 +26,16 @@ Extract Amazon product pages via Termux Browser Pilot, score value-to-cost via J
 
 | Method | How it works | Pitfall |
 |--------|-------------|---------|
-| **Percent savings anchor** (`₹X with N% savings`) | Picks first matching line | Ads/recommendations inject fake prices — hijacks the anchor |
-| **First price** (first ₹>=150) | Simple, fast | Fails when MRP > deal price (picks MRP first) |
-| **Frequency-based** ✅ | Count all prices, pick most frequent ≥150 | Fails when MRP appears more often than deal price (rare) |
+| **Percent savings anchor** (`₹X with N% savings`) | Picks first matching line | Ads/recommendations inject fake prices — hijacks the anchor (Seagate 4TB: ad ₹9,799 matched before buy box ₹16,949) |
+| **First price** (first ₹ on page) ✅ | Buy box renders before ads/related blocks in Amazon's text dump | None observed — buy box is always first |
+| **Frequency-based** | Count all prices, pick most frequent | WRONG: per-count prices (₹4,237.25/count) repeat 4× and beat deal price's 3× |
 
-**Recommended:** frequency-based as primary, first-price as fallback. Verify edge cases manually.
+**Recommended:** first-price rule. Buy box renders before ads/related-products blocks in the rendered text dump. Savings anchor and frequency counts both get hijacked.
 
-Frequency extraction pattern (bash):
+First-price extraction pattern (bash):
 ```bash
 txt=$(python3 cli.py text 2>/dev/null)
-price=$(echo "$txt" | grep -E '₹[0-9]' | grep -vE '/ count|per count|per month|Warranty|warranty|Extended' | \
-    grep -oE '₹[0-9][0-9,]*' | tr -d '₹,' | sort | uniq -c | sort -rn | head -1 | awk '{print $2}')
+price=$(echo "$txt" | grep -oE '₹[0-9][0-9,]*(\.[0-9]{2})?' | head -1 | sed 's/₹//g;s/\.[0-9]*//g;s/,//g')
 ```
 
 ### 2. Score (Jev Decisions API) — 4-lens methodology
